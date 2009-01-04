@@ -1,0 +1,14 @@
+#labels welcome,Featured
+|| test page ||
+
+= Welcome to Dertin GNU/Linux =
+----
+
+
+- What is Dertin GNU / Linux?
+
+This is a distribution of GNU/Linux, the goal in their Alpha is a simple and dynamic development to begin to integrate new partners to make this distribution a powerful, dynamic, updated and secure turn the simplest possible.
+
+== Details ==
+...
+
