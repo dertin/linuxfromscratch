@@ -1,5 +1,10 @@
 #!/bin/bash
-echo "Start script... ./dertin-linux-PART3 [  OK  ]
+
+echo "Start ver.3.1 - PART 2"
+echo "Script UP!!
+..........................................................
+"
+echo "~/.bash_profile & ~/.bashrc      [  OK  ]
 "
 cat > ~/.bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash

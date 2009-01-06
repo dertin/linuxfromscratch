@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Start ver.3.1 - PART 3"
+echo "Script UP!!
+..........................................................
+"
 export SRC=/mnt/dertin/sources
 read -p "The location of the source code directory: $SRC" 
 
