@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Start ver.4 - 	
+echo "Start ver.4.1 - 	
 Authors: Dertin (Guillermo Céspedes Tabárez)
 Bug Report: http://code.google.com/p/dertin/issues/list"
 echo "Script UP!!
@@ -38,9 +38,6 @@ passwd dertin
 chown -v dertin $DER/tools
 chown -v dertin $DER/sources
 
-cd /home/dertin
-wget http://dertin.googlecode.com/files/dertin-linux-PART2
-chmod 777 dertin-linux-PART2
 su - dertin
 }
 
@@ -62,9 +59,6 @@ DER_TGT=$(uname -m)-dertin-linux-gnu
 PATH=/tools/bin:/bin:/usr/bin
 export DER LC_ALL DER_TGT PATH
 EOF
-
-wget http://dertin.googlecode.com/files/dertin-linux-PART3
-chmod 777 dertin-linux-PART3
 
 source ~/.bash_profile
 }
