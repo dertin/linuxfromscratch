@@ -1,0 +1,420 @@
+#!/bin/bash
+
+echo "Start ver.4 - 	
+Authors: Dertin (Guillermo Céspedes Tabárez)
+Bug Report: http://code.google.com/p/dertin/issues/list"
+echo "Script UP!!
+..........................................................
+"
+main(){
+read -p "Enter partition to format [ext3] {eg: sda1}: " P1
+mke2fs -jv /dev/$P1
+echo "Format... /dev/$P1  [  OK  ]"
+read -p "Enter partition swap {eg: sda2} " P2
+mkswap /dev/$P2
+echo "Mkswap... /dev/$P2  [  OK  ]
+"
+echo "Mount $P1 & Swapon $P2"
+export DER=/mnt/dertin
+mkdir -pv $DER
+mount -v -t ext3 /dev/$P1 $DER
+/sbin/swapon -v /dev/$P2
+echo "Mount & Swapon   [  OK  ]
+"
+echo "Go to the directory: $DER"
+cd $DER
+echo "Create the directory: sources"
+mkdir -v sources
+chmod -v a+wt sources
+echo "Create the directory: tools"
+mkdir -v tools
+echo "link $DER/tools - /"
+ln -sv $DER/tools /
+echo "Adding the dertin User"
+groupadd user
+useradd -s /bin/bash -g user -m -k /dev/null dertin
+passwd dertin
+
+chown -v dertin $DER/tools
+chown -v dertin $DER/sources
+
+cd /home/dertin
+wget http://dertin.googlecode.com/files/dertin-linux-PART2
+chmod 777 dertin-linux-PART2
+su - dertin
+}
+
+profile(){
+echo "~/.bash_profile & ~/.bashrc      [  OK  ]
+"
+cd /home/dertin
+
+cat > ~/.bash_profile << "EOF"
+exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
+EOF
+
+cat > ~/.bashrc << "EOF"
+set +h
+umask 022
+DER=/mnt/dertin
+LC_ALL=POSIX
+DER_TGT=$(uname -m)-dertin-linux-gnu
+PATH=/tools/bin:/bin:/usr/bin
+export DER LC_ALL DER_TGT PATH
+EOF
+
+wget http://dertin.googlecode.com/files/dertin-linux-PART3
+chmod 777 dertin-linux-PART3
+
+source ~/.bash_profile
+}
+
+package(){
+export SRC=/mnt/dertin/sources
+read -p "The location of the source code directory: $SRC" 
+
+echo "Preparing ...
+"
+echo "Go to the directory: sources"
+cd $SRC
+echo "Create the directory: patches"
+mkdir -v patches
+echo "Create the directory: package"
+mkdir -v package
+echo "Go to the directory: package"
+cd package
+echo "Create the directory: file"
+mkdir -v file
+echo "Create the directory: src"
+mkdir -v src
+echo "Create the directory: build"
+mkdir -v build
+echo "Go to the directory: file"
+cd file
+
+echo "Ready for Download Packages ?  ... $SRC/file  [  YES  ]"
+echo "Ready for Download UnPack   ?  ... $SRC/src   [  YES  ]
+"
+echo "Starting... > Download & Unpack..."
+
+
+wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.63.tar.bz2						#autoconf
+cd ../src
+tar jvxf ../file/autoconf-2.63.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/automake/automake-1.10.2.tar.bz2						#automake
+cd ../src
+tar jvxf ../file/automake-1.10.2.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/bash/bash-3.2.tar.gz							#bash
+cd ../src
+tar xzvf ../file/bash-3.2.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/bash/bash-doc-3.2.tar.gz							#bash-doc
+cd ../src
+tar xzvf ../file/bash-doc-3.2.tar.gz
+cd ../file
+wget http://download-east.oracle.com/berkeley-db/db-4.7.25.tar.gz					#berkeley-db
+cd ../src
+tar xzvf ../file/db-4.7.25.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/binutils/binutils-2.19.tar.bz2						#binutils
+cd ../src
+tar jvxf ../file/binutils-2.19.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/bison/bison-2.4.tar.bz2							#bison
+cd ../src
+tar jvxf ../file/bison-2.4.tar.bz2
+cd ../file
+wget http://www.bzip.org/1.0.5/bzip2-1.0.5.tar.gz							#bzip2
+cd ../src
+tar xzvf ../file/bzip2-1.0.5.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/coreutils/coreutils-6.12.tar.gz						#coreutils
+cd ../src
+tar xzvf ../file/coreutils-6.12.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/dejagnu/dejagnu-1.4.4.tar.gz						#dejagnu
+cd ../src
+tar xzvf ../file/dejagnu-1.4.4.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/diffutils/diffutils-2.8.1.tar.gz						#diffutils
+cd ../src
+tar xzvf ../file/diffutils-2.8.1.tar.gz
+cd ../file
+wget http://prdownloads.sourceforge.net/e2fsprogs/e2fsprogs-1.41.3.tar.gz				#e2fsprogs
+cd ../src
+tar xzvf ../file/e2fsprogs-1.41.3.tar.gz
+cd ../file
+wget http://expect.nist.gov/src/expect-5.43.0.tar.gz							#expect
+cd ../src
+tar xzvf ../file/expect-5.43.0.tar.gz
+cd ../file
+wget ftp://ftp.astron.com/pub/file/file-4.26.tar.gz							#file
+cd ../src
+tar xzvf ../file/file-4.26.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/findutils/findutils-4.4.0.tar.gz						#findutils
+cd ../src
+tar xzvf ../file/findutils-4.4.0.tar.gz
+cd ../file
+wget http://prdownloads.sourceforge.net/flex/flex-2.5.35.tar.bz2					#flex
+cd ../src
+tar jvxf ../file/flex-2.5.35.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/gawk/gawk-3.1.6.tar.bz2							#gawk
+cd ../src
+tar jvxf ../file/gawk-3.1.6.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/gcc/gcc-4.3.2/gcc-4.3.2.tar.bz2						#gcc
+cd ../src
+tar jvxf ../file/gcc-4.3.2.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/gettext/gettext-0.17.tar.gz							#gettext
+cd ../src
+tar xzvf ../file/gettext-0.17.tar.gz
+cd ../file
+wget ftp://ftp.lfs-matrix.net/pub/lfs/lfs-packages/development/glibc-2.8-20080929.tar.bz2		#glibc
+cd ../src
+tar jvxf ../file/glibc-2.8-20080929.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/gmp/gmp-4.2.4.tar.bz2							#gmp
+cd ../src
+tar jvxf ../file/gmp-4.2.4.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/grep/grep-2.5.3.tar.bz2							#grep
+cd ../src
+tar jvxf ../file/grep-2.5.3.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/groff/groff-1.18.1.4.tar.gz							#groff
+cd ../src
+tar xzvf ../file/groff-1.18.1.4.tar.gz
+cd ../file
+wget ftp://alpha.gnu.org/gnu/grub/grub-0.97.tar.gz							#grub
+cd ../src
+tar xzvf ../file/grub-0.97.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/gzip/gzip-1.3.12.tar.gz							#gzip
+cd ../src
+tar xzvf ../file/gzip-1.3.12.tar.gz
+cd ../file
+wget http://sethwklein.net/iana-etc-2.30.tar.bz2							#iana
+cd ../src
+tar jvxf ../file/iana-etc-2.30.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/inetutils/inetutils-1.5.tar.gz						#inetutils
+cd ../src
+tar xzvf ../file/inetutils-1.5.tar.gz
+cd ../file
+wget http://developer.osdl.org/dev/iproute2/download/iproute2-2.6.26.tar.bz2				#iproute2
+cd ../src
+tar jvxf ../file/iproute2-2.6.26.tar.bz2
+cd ../file
+wget http://ftp.altlinux.com/pub/people/legion/kbd/kbd-1.15.tar.gz					#kbd
+cd ../src
+tar xzvf ../file/kbd-1.15.tar.gz
+cd ../file
+wget http://www.greenwoodsoftware.com/less/less-418.tar.gz						#less
+cd ../src
+tar xzvf ../file/less-418.tar.gz
+cd ../file
+wget http://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-20081031.tar.bz2		#bootscripts
+cd ../src
+tar jvxf ../file/lfs-bootscripts-20081031.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/libtool/libtool-2.2.6a.tar.gz						#libtool
+cd ../src
+tar xzvf ../file/libtool-2.2.6a.tar.gz
+cd ../file
+wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.28.tar.bz2					#linux-2.6.28
+cd ../src
+tar jvxf ../file/linux-2.6.28.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/m4/m4-1.4.12.tar.bz2							#m4
+cd ../src
+tar jvxf ../file/m4-1.4.12.tar.bz2
+cd ../file
+wget http://ftp.gnu.org/gnu/make/make-3.81.tar.bz2							#make
+cd ../src
+tar jvxf ../file/make-3.81.tar.bz2
+cd ../file
+wget http://download.savannah.gnu.org/releases/man-db/man-db-2.5.3.tar.gz				#man-db
+cd ../src
+tar xzvf ../file/man-db-2.5.3.tar.gz
+cd ../file
+wget http://www.kernel.org/pub/linux/docs/manpages/Archive/man-pages-3.15.tar.bz2			#man-pages
+cd ../src
+tar jvxf ../file/man-pages-3.15.tar.bz2
+cd ../file
+wget http://www.kernel.org/pub/linux/utils/kernel/module-init-tools/module-init-tools-3.5.tar.bz2	#module-init-tools
+cd ../src
+tar jvxf ../file/module-init-tools-3.5.tar.bz2
+cd ../file
+wget http://dertin.googlecode.com/files/mpfr-2.3.2.tar.gz						#mpfr
+cd ../src
+tar xzvf ../file/mpfr-2.3.2.tar.gz
+cd ../file
+wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.7.tar.gz							#ncurses
+cd ../src
+tar xzvf ../file/ncurses-5.7.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/patch/patch-2.5.4.tar.gz							#patch
+cd ../src
+tar xzvf ../file/patch-2.5.4.tar.gz
+cd ../file
+wget http://cpan.org/src/perl-5.10.0.tar.gz								#perl
+cd ../src
+tar xzvf ../file/perl-5.10.0.tar.gz
+cd ../file
+wget http://procps.sourceforge.net/procps-3.2.7.tar.gz							#procps
+cd ../src
+tar xzvf ../file/procps-3.2.7.tar.gz
+cd ../file
+wget http://prdownloads.sourceforge.net/psmisc/psmisc-22.6.tar.gz					#psmisc
+cd ../src
+tar xzvf ../file/psmisc-22.6.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/readline/readline-5.2.tar.gz						#readline
+cd ../src
+tar xzvf ../file/readline-5.2.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/sed/sed-4.1.5.tar.gz							#sed
+cd ../src
+tar xzvf ../file/sed-4.1.5.tar.gz
+cd ../file
+wget ftp://pkg-shadow.alioth.debian.org/pub/pkg-shadow/shadow-4.1.2.2.tar.bz2				#shadow
+cd ../src
+tar jvxf ../file/shadow-4.1.2.2.tar.bz2
+cd ../file
+wget http://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.tar.gz				#sysklogd
+cd ../src
+tar xzvf ../file/sysklogd-1.5.tar.gz
+cd ../file
+wget ftp://ftp.cistron.nl/pub/people/miquels/sysvinit/sysvinit-2.86.tar.gz				#sysvinit
+cd ../src
+tar xzvf ../file/sysvinit-2.86.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/tar/tar-1.20.tar.bz2							#tar
+cd ../src
+tar jvxf ../file/tar-1.20.tar.bz2
+cd ../file
+wget http://prdownloads.sourceforge.net/tcl/tcl8.5.5-src.tar.gz						#tcl8.5.5
+cd ../src
+tar xzvf ../file/tcl8.5.5-src.tar.gz
+cd ../file
+wget http://ftp.gnu.org/gnu/texinfo/texinfo-4.13a.tar.gz						#texinfo
+cd ../src
+tar xzvf ../file/texinfo-4.13a.tar.gz
+cd ../file
+wget http://www.kernel.org/pub/linux/utils/kernel/hotplug/udev-135.tar.bz2				#udev
+cd ../src
+tar jvxf ../file/udev-135.tar.bz2
+cd ../file
+wget http://www.linuxfromscratch.org/lfs/downloads/development/udev-config-20081229.tar.bz2		#udev-config
+cd ../src
+tar jvxf ../file/udev-config-20081229.tar.bz2
+cd ../file
+wget http://www.kernel.org/pub/linux/utils/util-linux-ng/v2.14/util-linux-ng-2.14.1.tar.bz2		#util-linux-ng
+cd ../src
+tar jvxf ../file/util-linux-ng-2.14.1.tar.bz2
+cd ../file
+wget ftp://ftp.vim.org/pub/vim/unix/vim-7.2.tar.bz2							#vim
+cd ../src
+tar jvxf ../file/vim-7.2.tar.bz2
+cd ../file
+wget ftp://ftp.vim.org/pub/vim/extra/vim-7.2-lang.tar.gz						#vim-lang
+cd ../src
+tar xzvf ../file/vim-7.2-lang.tar.gz
+cd ../file
+wget http://www.zlib.net/zlib-1.2.3.tar.bz2								#zlib
+cd ../src
+tar jvxf ../file/zlib-1.2.3.tar.bz2
+
+
+echo "Finished! Download Package... [ CORRECT ]
+
+
+"
+echo ">> Download Patches <<
+"
+echo "Go to the directory: Patches"
+cd $SRC/patches
+
+echo "Ready for Download Patches? ... [ YES ]
+"
+echo "Starting ... > Download Patches ...."
+
+wget  http://www.linuxfromscratch.org/patches/lfs/development/bash-3.2-fixes-9.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/db-4.7.25-upstream_fixes-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/bzip2-1.0.5-install_docs-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/coreutils-6.12-i18n-2.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/coreutils-6.12-old_build_kernel-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/coreutils-6.12-uname-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/diffutils-2.8.1-i18n-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/expect-5.43.0-spawn-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/expect-5.43.0-tcl_8.5.5_fix-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/gcc-4.3.2-startfiles_fix-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/glibc-2.8-20080929-iconv_tests-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/glibc-2.8-20080929-ildoubl_test-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/grep-2.5.3-debian_fixes-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/grep-2.5.3-upstream_fixes-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/groff-1.18.1.4-debian_fixes-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/grub-0.97-disk_geometry-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/grub-0.97-256byte_inode-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/inetutils-1.5-no_server_man_pages-2.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/kbd-1.15-backspace-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/perl-5.10.0-consolidated-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/procps-3.2.7-watch_unicode-1.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/readline-5.2-fixes-6.patch
+wget  http://www.linuxfromscratch.org/patches/lfs/development/vim-7.2-fixes-4.patch
+
+echo "Finished! Download Patches... [ CORRECT ]
+"
+cd $SRC/package/build
+mkdir -v binutils-build
+cd binutils-build
+echo "Configure binutils-2.19. [ Pass 1 ]"
+../../src/binutils-2.19/configure --target=$DER_TGT --prefix=/tools --disable-nls --disable-werror
+echo "Make binutils-2.19. [ ... ]"
+make
+echo "Make Install binutils-2.19. [ Pass 1 ]"
+make install
+echo "Binutils-2.19 - Pass 1     [ OK ]"
+
+#Not Test ********************************** Not Test
+echo "Configure gcc-4.3.2. [ Pass 1 ]"
+
+cp -v $SRC/package/src/gcc-4.3.2 $SRC/package/src/gcc-mix
+cp -v $SRC/package/src/mpfr-2.3.2 $SRC/package/src/gcc-mix/mpfr
+cp -v $SRC/package/src/gmp-4.2.4 $SRC/package/src/gcc-mix/gmp
+
+cd $SRC/package/build
+mkdir -v gcc-build
+cd gcc-build
+
+../../src/gcc-mix/configure --target=$DER_TGT --prefix=/tools --disable-nls --disable-shared --disable-decimal-float --disable-threads --disable-libmudflap --disable-libssp --disable-libgomp --enable-languages=c
+
+echo "Make gcc-4.3.2. [ ... ]"
+make
+echo "Make Install gcc-4.3.2. [ ... ]"
+make install
+
+ln -vs libgcc.a `$DER_TGT-gcc -print-libgcc-file-name | sed 's/libgcc/&_eh/'`
+echo "GCC-4.3.2. - Pass 1     [ OK ]"
+
+}
+#/////////////////////////////////////////////////////////////////////////////////////
+
+main
+profile
+if [-e ~/.bash_profile & ~/.bashrc]
+then
+package
+else
+echo "Error processing function profile()"
+exit 1
+fi
+
+echo "END Script ver.4, GoodBye...
+Authors: Dertin (Guillermo Céspedes Tabárez)"
+
