@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "dertin-linux-up ver.5 - 	
+echo "dertin-linux-up ver.5.1 - 	
 Authors: Dertin (Guillermo Céspedes Tabárez)
 Bug Report: http://code.google.com/p/dertin/issues/list"
 echo "Script UP!!
@@ -82,10 +82,6 @@ exit 1
 fi
 echo "link $DER/tools - /"
 ln -sv $DER/tools /
-if [ $? = 1 ]; then
-echo "Error ln... is root ?"
-exit 1
-fi
 
 echo "Adding the dertin User"
 groupadd user
@@ -127,6 +123,7 @@ if [ $? = 1 ]; then
 echo "Error \".bash_profile\"... exit"
 exit 1
 fi
+
 cat > .bashrc << "EOF"
 set +h
 umask 022
@@ -140,11 +137,13 @@ if [ $? = 1 ]; then
 echo "Error \".bashrc\"... exit"
 exit 1
 fi
+
 source .bash_profile
 if [ $? = 1 ]; then
 echo "Error \"source .bash_profile\"... exit"
 exit 1
 fi
+
 }
 
 package(){
@@ -710,6 +709,8 @@ wget  http://www.linuxfromscratch.org/patches/lfs/development/vim-7.2-fixes-4.pa
 
 echo "Finished! Download Patches... [ CORRECT ]
 "
+export SRC=/mnt/dertin/sources
+
 cd $SRC/package/build
 mkdir -v binutils-build
 cd binutils-build
