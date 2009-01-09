@@ -6,6 +6,31 @@ Bug Report: http://code.google.com/p/dertin/issues/list"
 echo "Script UP!!
 ..........................................................
 "
+helpx()
+{
+echo "	How to use ?
+
+linux-dertin-up --make		
+| Begins to mount the partition. 
+>It requires a clean partition that is ready for formatting 
+and other partition swap.
+
+linux-dertin-up --profile	
+| Creates the basic configuration of the user master. 
+>It requires mount the partition
+
+linux-dertin-up --setup		
+| Download the source code and start to install the base system. 
+>It requires the user master.
+
+linux-dertin-up --start		
+| Initiating steps of configuration and installation of the system full. 
+>It requires a basic system installed.
+
+linux-dertin-up --help		| ...
+"
+}
+
 main(){
 read -p "Enter partition to format [ext3] {eg: sda1}: " P1
 mke2fs -jv /dev/$P1
@@ -32,7 +57,7 @@ echo "link $DER/tools - /"
 ln -sv $DER/tools /
 echo "Adding the dertin User"
 groupadd user
-useradd -s /bin/bash -g user -m -k /dev/null dertin
+useradd -s /bin/bash -g user -m -k /dev/null dertinx
 passwd dertin
 
 chown -v dertin $DER/tools
@@ -44,13 +69,13 @@ su - dertin
 profile(){
 echo "~/.bash_profile & ~/.bashrc      [  OK  ]
 "
-cd /home/dertin
+cd /home/dertinx
 
-cat > ~/.bash_profile << "EOF"
+cat > .bash_profile << "EOF"
 exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
 EOF
 
-cat > ~/.bashrc << "EOF"
+cat > .bashrc << "EOF"
 set +h
 umask 022
 DER=/mnt/dertin
@@ -60,7 +85,7 @@ PATH=/tools/bin:/bin:/usr/bin
 export DER LC_ALL DER_TGT PATH
 EOF
 
-source ~/.bash_profile
+source .bash_profile
 }
 
 package(){
@@ -395,19 +420,37 @@ make install
 
 ln -vs libgcc.a `$DER_TGT-gcc -print-libgcc-file-name | sed 's/libgcc/&_eh/'`
 echo "GCC-4.3.2. - Pass 1     [ OK ]"
-
 }
 #/////////////////////////////////////////////////////////////////////////////////////
 
-main
-profile
-if [-e ~/.bash_profile & ~/.bashrc]
-then
-package
-else
-echo "Error processing function profile()"
-exit 1
+if [ $# -lt 1 ]; then
+        echo "Failure. He hoped at least one parameter"
+	helpx
+        exit 1
 fi
+
+case $1 in
+        --make)
+        main
+        exit 0
+        ;;
+        --profile)
+        profile
+        exit 0
+        ;;
+        --setup)
+	package
+        exit 0
+        ;;
+	--help)
+	helpx
+	exit 0
+	;;
+        *)
+        echo "Unrecognized Parameter"
+        exit 1
+        ;;
+esac
 
 echo "END Script ver.4, GoodBye...
 Authors: Dertin (Guillermo Céspedes Tabárez)"
