@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "dertin-linux-up ver.5.1 - 	
+echo "dertin-linux-up ver.5.4 - 	
 Authors: Dertin (Guillermo Céspedes Tabárez)
 Bug Report: http://code.google.com/p/dertin/issues/list"
 echo "Script UP!!
@@ -17,10 +17,10 @@ and other partition swap.
 
 linux-dertin-up --profile	
 | Creates the basic configuration of the user master. 
->It requires mount the partition
+> ...
 
-linux-dertin-up --setup		
-| Download the source code and start to install the base system. 
+linux-dertin-up --package	
+| Download the source code. 
 >It requires the user master.
 
 linux-dertin-up --start		
@@ -83,7 +83,7 @@ fi
 echo "link $DER/tools - /"
 ln -sv $DER/tools /
 
-echo "Adding the dertin User"
+echo "Adding the dertinx User"
 groupadd user
 if [ $? = 1 ]; then
 echo "Error groupadd... exit"
@@ -96,8 +96,8 @@ exit 1
 fi
 passwd dertinx
 
-chown -v dertin $DER/tools
-chown -v dertin $DER/sources
+chown -v dertinx $DER/tools
+chown -v dertinx $DER/sources
 
 su - dertinx
 if [ $? = 1 ]; then
@@ -709,6 +709,8 @@ wget  http://www.linuxfromscratch.org/patches/lfs/development/vim-7.2-fixes-4.pa
 
 echo "Finished! Download Patches... [ CORRECT ]
 "
+}
+setup_base(){
 export SRC=/mnt/dertin/sources
 
 cd $SRC/package/build
@@ -772,10 +774,14 @@ case $1 in
         profile
         exit 0
         ;;
-        --setup)
+        --package)
 	package
         exit 0
         ;;
+	--setup)
+	setup_base
+	exit 0
+	;;
 	--help)
 	helpx
 	exit 0
