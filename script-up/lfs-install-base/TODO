@@ -1,17 +1,4 @@
 Todo list
 ---------
 
-. Add toolchain-test (chapter05/adjusting.sh, chapter06/readjusting.sh)
-. Add cdrom script
-. Add logging/debug redirection
-. Add colors
-. Add verbose/expert mode (more information, more questions)
-. Add additional options (ressource location, usedefinable sources)
-. Add time messurement (SBU)
-. Support for crosscompiling
-. Support for parallelcompiling
-. Support for distcc/ccache
-. Support for multi partitions
 
-. Fix 'FIXME'
-. Write documentation

@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # LFS-Install - An Automated Linux From Scratch-Installer
-# Copyright (C) 2002-2005  Daniel Baumann <daniel.baumann@panthera-systems.net>
+# Copyright (C) 2009  Team Developer Dertin GNU/Linux
+#
+# This project is based on "http://savannah.nongnu.org/projects/lfs-install/"
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
