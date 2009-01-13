@@ -15,12 +15,12 @@ function Introduction ()
 	# 3.1. Introduction
 	
 	echo
-	echo -n "Enter server [ftp://ftp.linuxfromscratch.org/pub/lfs/]: "
+	echo -n "Enter server [http://lfs-matrix.com/pub/lfs/]: "
 	read SERVER
 	
 	if [ -z "$SERVER" ]
 	then
-		SERVER="http://kerrek.linuxfromscratch.org/pub/lfs/"
+		SERVER="http://lfs-matrix.com/pub/lfs/"
 	fi
 	
 	cd "$LFS"
