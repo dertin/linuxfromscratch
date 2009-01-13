@@ -9,6 +9,8 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
+# Amended by: Guillermo Céspedes Tabárez
+# 13/01/2009
 
 function Creatingfilesystem ()
 {
@@ -33,7 +35,7 @@ function Creatingfilesystem ()
 
 	# Begin commands
 	#mke2fs $PARTITION
-	mke2fs -jv $PARTITION #Add: FS ext3
+	mke2fs -jv $PARTITION
 	#mkswap $PARTITION
 	# End commands
 }
