@@ -14,7 +14,7 @@
 
 function Creatingfilesystem ()
 {
-	# 2.3. Creating a File System on the Partition
+	# 2.4. Creating a File System on the Partition
 	echo
 	echo -n "Enter partition [/dev/hda1]: "
 	read PARTITION
