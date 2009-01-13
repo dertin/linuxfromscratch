@@ -67,16 +67,16 @@ function main ()
 			echo -e "\t -h, --help:    \t Shows help screen"
 			echo -e "\t -v, --version: \t Shows version information"
 			echo
-			echo "Report bugs to Daniel Baumann <daniel.baumann@panthera-systems.net>"
+			echo "Report bugs to ...soon..."
 
 			exit 1
 			;;
 
 		-v|--version)
 			echo "LFS-Install, version $LFS_INSTALL_VERSION"
-			echo "Copyright (C) 2002-2005  Daniel Baumann <daniel.baumann@panthera-systems.net>"
+			echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
 			echo
-			echo "Homepage <http://people.panthera-systems.net/~daniel-baumann/>"
+			echo "Homepage ...soon..."
 
 			exit 1
 			;;
@@ -85,15 +85,18 @@ function main ()
 			Check_running
 			Check_existing
 			Check_user
+			Check_compile
 
-			echo "LFS-Install - An Automated Linux From Scratch-Installer"
-			echo "Copyright (C) 2002-2005  Daniel Baumann <daniel.baumann@panthera-systems.net>"
-			echo
-			echo "LFS-Install comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
-			echo "This is free software, and you are welcome to redistribute it"
-			echo "under certain conditions; see COPYING for details."
-			echo
-
+		echo "LFS-Install - An Automated Linux From Scratch-Installer"
+		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo
+		echo "This project is based on http://savannah.nongnu.org/projects/lfs-install/"
+		echo
+		echo "LFS-Install comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
+		echo "This is free software, and you are welcome to redistribute it"
+		echo "under certain conditions; see COPYING for details."
+		echo
+	
 			Lfs_install
 			;;
 	esac
