@@ -24,7 +24,7 @@ function Introduction ()
 	fi
 	
 	cd "$LFS"
-	wget --quiet --delete-after "$SERVER"/conglomeration/MD5SUMS
+	wget --quiet --delete-after "$SERVER"/lfs-packages/6.4/MD5SUMS
 	
 	if [ "$?" != "0" ]
 	then
