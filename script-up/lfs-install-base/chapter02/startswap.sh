@@ -12,8 +12,10 @@
 # Author: Guillermo Céspedes Tabárez
 # 13/01/2009
 
-function Swap (){
-	
+function Swap ()
+{
+	# 2.3. Start a Swap Partition
+
 read -p "Start a swap partition?" OPT
 
 case "$OPT" in
