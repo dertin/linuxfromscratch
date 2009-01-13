@@ -9,6 +9,14 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
+# Amended by: Guillermo Céspedes Tabárez
+# 13/01/2009
+
+function pause()
+{
+	read -s -n 1 -p "$*"
+	echo
+}
 
 function Creatingpartition ()
 {
@@ -32,6 +40,12 @@ function Creatingpartition ()
 	export DISK
 
 	# Begin commands
+	
+	echo
+	echo "Create a partition of at least 4gb, and if you want to create another partition that is exchanged." 
+	echo
+	pause "Press any key to continue"
+	
 	cfdisk $DISK
 	#fdisk $DISK
 	# End commands
