@@ -32,7 +32,8 @@ function Creatingfilesystem ()
 	export PARTITION
 
 	# Begin commands
-	mke2fs $PARTITION
+	#mke2fs $PARTITION
+	mke2fs -jv $PARTITION #Add: FS ext3
 	#mkswap $PARTITION
 	# End commands
 }
