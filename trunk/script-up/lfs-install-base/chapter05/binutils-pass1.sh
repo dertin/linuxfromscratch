@@ -13,25 +13,27 @@ function Binutils_pass1 ()
 {
 	# 5.4. Binutils-2.15.91.0.2 - Pass 1
 	cd "$LFS"/sources
-	tar xfj binutils-2.15.91.0.2.tar.bz2
-	cd binutils-2.15.91.0.2
+	tar xfj binutils-2.18.tar.bz2
+	cd binutils-2.18
 
 	# 5.4.1. Installation of Binutils
-
+	
 	# Begin commands
+	
+	patch -Np1 -i ../binutils-2.18-configure-1.patch
+	
 	mkdir ../binutils-build
 	cd ../binutils-build
 
-	../binutils-2.15.91.0.2/configure --prefix=/tools \
-		--disable-nls
+	CC="gcc -B/usr/bin/" ../binutils-2.18/configure \
+    --prefix=/tools --disable-nls --disable-werror
 
-	make configure-host
-	make LDFLAGS="-all-static"
-
+	make
 	make install
-
+		
 	make -C ld clean
-	make -C ld LDFLAGS="-all-static" LIB_PATH=/tools/lib
+	make -C ld LIB_PATH=/tools/lib
+	cp -v ld/ld-new /tools/bin
 	# End commands
 
 	# Warning
