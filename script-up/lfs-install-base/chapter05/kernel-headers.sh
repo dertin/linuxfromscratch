@@ -12,7 +12,7 @@
 
 function Kernel_headers ()
 {
-	# 5.7. Linux-2.6.8.1 Headers
+	# 5.7. Linux-2.6.27.4 Headers
 	cd "$LFS"/sources
 	tar xfj linux-2.6.27.4.tar.bz2
 	cd linux-2.6.27.4
