@@ -20,16 +20,16 @@ function Chapter05 ()
 	# 5.2. Host System Requirements
 	"$LFS_INSTALL"/chapter05/hostreqs.sh
 
-	# 5.4. Binutils-2.15.91.0.2 - Pass 1
-	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass1.sh
+	# 5.4. Binutils-2.18 - Pass 1
+	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass1.sh					#OK
 
-	# 5.5 GCC-3.4.1 - Pass 1
-	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass1.sh
+	# 5.5. GCC-4.3.2 - Pass 1
+	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass1.sh						#OK
 
-	# 5.6. Linux-Libc-Headers-2.6.8.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/linux-libc-headers.sh
+	# X.X. Linux-Libc-Headers-2.6.8.1
+	#Settingenvironment "$LFS_INSTALL"/chapter05/linux-libc-headers.sh
 
-	# 5.7. Linux-2.6.8.1 Headers
+	# 5.6. Linux-2.6.27.4 API Headers
 	Settingenvironment "$LFS_INSTALL"/chapter05/kernel-headers.sh
 
 	# 5.8. Glibc-2.3.4-20040701
