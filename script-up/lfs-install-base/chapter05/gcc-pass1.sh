@@ -14,8 +14,10 @@ function Gcc_pass1 ()
 {
 	# 5.5. GCC-3.4.1 - Pass 1
 	cd "$LFS"/sources
-	tar xfj gcc-core-3.4.1.tar.bz2
-	cd gcc-3.4.1
+	tar -jxf ../mpfr-2.3.2.tar.bz2
+	mv mpfr-2.3.2 mpfr
+	tar -jxf ../gmp-4.2.4.tar.bz2
+	mv gmp-4.2.4 gmp
 
 	# 5.5.1. Installation of GCC
 
@@ -23,15 +25,17 @@ function Gcc_pass1 ()
 	mkdir ../gcc-build
 	cd ../gcc-build
 
-	../gcc-3.4.1/configure --prefix=/tools \
-		--libexecdir=/tools/lib --with-local-prefix=/tools \
-		--disable-nls --enable-shared --enable-languages=c
+	CC="gcc -B/usr/bin/" ../gcc-4.3.2/configure --prefix=/tools \
+    --with-local-prefix=/tools --disable-nls --disable-shared --disable-libssp \
+    --enable-languages=c
 	
-	make BOOT_LDFLAGS="-static" bootstrap
-
+	make
 	make install
 
-	ln -s gcc /tools/bin/cc
+	ln -vs libgcc.a `gcc -print-libgcc-file-name | \
+    sed 's/libgcc/&_eh/'`
+    
+    ln -vs gcc /tools/bin/cc
 	# End commands
 
 	cd ..
