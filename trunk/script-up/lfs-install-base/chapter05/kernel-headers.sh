@@ -14,27 +14,20 @@ function Kernel_headers ()
 {
 	# 5.7. Linux-2.6.8.1 Headers
 	cd "$LFS"/sources
-	tar xfj linux-2.6.8.1.tar.bz2
-	cd linux-2.6.8.1
+	tar xfj linux-2.6.27.4.tar.bz2
+	cd linux-2.6.27.4
 
 	# 5.7.1. Installation of the Kernel Headers
 
 	# Begin commands
 	make mrproper
-
-	make include/linux/version.h
-
-	make include/asm
-
-	mkdir /tools/glibc-kernheaders
-	cp -HR include/asm /tools/glibc-kernheaders
-	cp -R include/asm-generic /tools/glibc-kernheaders
-
-	cp -R include/linux /tools/glibc-kernheaders
+	make headers_check
+	make INSTALL_HDR_PATH=dest headers_install
+	cp -rv dest/include/* /tools/include
 	# End commands
 
 	cd ..
-	rm -rf linux-2.6.8.1
+	rm -rf linux-2.6.27.4
 }
 
 Kernel_headers
