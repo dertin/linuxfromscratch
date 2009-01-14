@@ -11,7 +11,7 @@
 
 function Binutils_pass1 ()
 {
-	# 5.4. Binutils-2.15.91.0.2 - Pass 1
+	# 5.4. Binutils-2.18 - Pass 1
 	cd "$LFS"/sources
 	tar xfj binutils-2.18.tar.bz2
 	cd binutils-2.18
