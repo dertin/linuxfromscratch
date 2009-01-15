@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# LFS-Install - An Automated Linux From Scratch-Installer
+# LFS-Automatic - An Automated Linux From Scratch-Installer
 # Copyright (C) 2009  Team Developer Dertin GNU/Linux
 #
-# This project is based on "http://savannah.nongnu.org/projects/lfs-install/"
+# This project is based on "http://savannah.nongnu.org/projects/LFS-Automatic/"
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -54,12 +54,12 @@ function main ()
 	LFS_INSTALL="$(pwd)"
 	export LFS_INSTALL
 
-	source "$LFS_INSTALL"/lfs-install.conf
-	source "$LFS_INSTALL"/lfs-install.func
+	source "$LFS_INSTALL"/LFS-Automatic.conf
+	source "$LFS_INSTALL"/LFS-Automatic.func
 
 	case "$1" in
 		-h|--help)
-			echo "LFS-Install - An Automated Linux From Scratch-Installer"
+			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 			echo
 			echo -e "Usage: \t $(basename $0) [OPTION]"
 			echo
@@ -73,7 +73,7 @@ function main ()
 			;;
 
 		-v|--version)
-			echo "LFS-Install, version $LFS_INSTALL_VERSION"
+			echo "LFS-Automatic, version $LFS_INSTALL_VERSION"
 			echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
 			echo
 			echo "Homepage ...soon..."
@@ -87,12 +87,12 @@ function main ()
 			Check_user
 			Check_compile
 
-		echo "LFS-Install - An Automated Linux From Scratch-Installer"
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
 		echo
-		echo "This project is based on http://savannah.nongnu.org/projects/lfs-install/"
+		echo "This project is based on http://savannah.nongnu.org/projects/LFS-Automatic/"
 		echo
-		echo "LFS-Install comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
+		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
 		echo "This is free software, and you are welcome to redistribute it"
 		echo "under certain conditions; see COPYING for details."
 		echo
