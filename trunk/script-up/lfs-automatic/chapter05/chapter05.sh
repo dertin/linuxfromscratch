@@ -32,7 +32,7 @@ function Chapter05 ()
 	# 5.6. Linux-2.6.27.4 API Headers
 	Settingenvironment "$LFS_INSTALL"/chapter05/kernel-headers.sh					#OK
 
-	# 5.8. Glibc-2.3.4-20040701
+	# 5.8. Glibc-2.8-20080929
 	Settingenvironment "$LFS_INSTALL"/chapter05/glibc.sh							#OK
 
 	# 5.9. Adjusting the Toolchain
