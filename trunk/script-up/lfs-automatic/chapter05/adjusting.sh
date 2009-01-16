@@ -19,6 +19,8 @@ function Adjusting ()
 	mv -v /tools/bin/{ld-new,ld}
 	ln -sv /tools/bin/ld /tools/$(gcc -dumpmachine)/bin/ld
 	
+	#si no existe ld-linux.so.2, y tiene otro nombre llevaria a un error.
+	
 	gcc -dumpspecs | sed 's@/lib/ld-linux.so.2@/tools&@g' \
   	> `dirname $(gcc -print-libgcc-file-name)`/specs
 	
