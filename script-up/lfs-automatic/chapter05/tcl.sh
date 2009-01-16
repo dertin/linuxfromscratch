@@ -12,10 +12,10 @@
 
 function Tcl ()
 {
-	# 5.10. Tcl-8.4.7
+	# 5.10. Tcl8.5.5
 	cd "$LFS"/sources
-	tar xfj tcl8.4.7-src.tar.bz2
-	cd tcl8.4.7
+	tar xfj tcl8.5.5-src.tar.gz
+	cd tcl8.5.5
 
 	# 5.10.1. Installation of Tcl
 
@@ -34,11 +34,15 @@ function Tcl ()
 
 	make install
 
-	ln -s tclsh8.4 /tools/bin/tclsh
+	chmod -v u+w /tools/lib/libtcl8.5.so
+	
+	make install-private-headers
+	ln -sv tclsh8.5 /tools/bin/tclsh
+	
 	# End commands
 
 	# Warning
-	# Do not remove the tcl8.4.7 source directory yet, as the next package
+	# Do not remove the Tcl8.5.5 source directory yet, as the next package
 	# will need its internal headers.
 
 	cd ..
