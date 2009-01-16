@@ -33,7 +33,7 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/kernel-headers.sh					#OK
 
 	# 5.8. Glibc-2.3.4-20040701
-	Settingenvironment "$LFS_INSTALL"/chapter05/glibc.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/glibc.sh							#OK
 
 	# 5.9. Adjusting the Toolchain
 	Settingenvironment "$LFS_INSTALL"/chapter05/adjusting.sh
