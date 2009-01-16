@@ -36,7 +36,7 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/glibc.sh							#OK
 
 	# 5.9. Adjusting the Toolchain
-	Settingenvironment "$LFS_INSTALL"/chapter05/adjusting.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/adjusting.sh						#OK
 
 	# 5.10. Tcl-8.4.7
 	Settingenvironment "$LFS_INSTALL"/chapter05/tcl.sh
