@@ -14,7 +14,7 @@ function Tcl ()
 {
 	# 5.10. Tcl8.5.5
 	cd "$LFS"/sources
-	tar xfj tcl8.5.5-src.tar.gz
+	tar xzf tcl8.5.5-src.tar.gz
 	cd tcl8.5.5
 
 	# 5.10.1. Installation of Tcl
