@@ -38,7 +38,7 @@ function Chapter05 ()
 	# 5.9. Adjusting the Toolchain
 	Settingenvironment "$LFS_INSTALL"/chapter05/adjusting.sh						#OK
 
-	# 5.10. Tcl-8.4.7
+	# 5.10. tcl8.5.5
 	Settingenvironment "$LFS_INSTALL"/chapter05/tcl.sh
 
 	# 5.11. Expect-5.42.1
