@@ -13,24 +13,13 @@
 function Adjusting ()
 {
 	# 5.9. Adjusting the Toolchain
-	cd "$LFS"/sources/binutils-build
-
-	# Begin commands
-	make -C ld install
-
-	SPECFILE=`gcc --print-file specs` &&
-	sed 's@ /lib/ld-linux.so.2@ /tools/lib/ld-linux.so.2@g' \
-		$SPECFILE > tempspecfile &&
-	mv -f tempspecfile $SPECFILE &&
-	unset SPECFILE
-
-	rm -f /tools/lib/gcc/*/*/include/{pthread.h,bits/sigthread.h}
-	
-	# FIXME: Implement sanity-test
+	SPECS=`dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/specs
+	$LFS_TGT-gcc -dumpspecs | sed \
+  	-e 's@/lib\(64\)\?/ld@/tools&@g' \
+  	-e "/^\*cpp:$/{n;s,$, -isystem /tools/include,}" > $SPECS 
+	echo "New specs file is: $SPECS"
+	unset SPECS
 	# End commands
-
-	cd ..
-	rm -rf binutils-2.15.91.0.2 binutils-build
 }
 
 Adjusting
