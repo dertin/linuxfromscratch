@@ -14,7 +14,7 @@ function Dejagnu ()
 {
 	# 5.12. DejaGNU-1.4.4
 	cd "$LFS"/sources
-	tar xfj dejagnu-1.4.4.tar.bz2
+	tar xzf dejagnu-1.4.4.tar.gz
 	cd dejagnu-1.4.4
 
 	# 5.12.1. Installation of DejaGNU
