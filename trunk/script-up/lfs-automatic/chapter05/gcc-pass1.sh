@@ -12,7 +12,7 @@
 
 function Gcc_pass1 ()
 {
-	# 5.5. GCC-3.4.1 - Pass 1
+	# 5.5. GCC-3.4.2 - Pass 1
 	cd "$LFS"/sources
 	tar -jxf ../mpfr-2.3.2.tar.bz2
 	mv mpfr-2.3.2 mpfr
@@ -41,7 +41,7 @@ function Gcc_pass1 ()
 	# End commands
 
 	cd ..
-	rm -rf gcc-3.4.1 gcc-build
+	rm -rf gcc-3.4.2 gcc-build
 }
 
 Gcc_pass1
