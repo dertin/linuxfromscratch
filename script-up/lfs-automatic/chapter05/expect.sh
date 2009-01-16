@@ -12,20 +12,25 @@
 
 function Expect ()
 {
-	# 5.11. Expect-5.42.1
+	# 5.11. Expect-5.43.0
 	cd "$LFS"/sources
-	tar xfj expect-5.42.1.tar.bz2
-	cd expect-5.42
+	tar xzf expect-5.43.0.tar.gz
+	cd expect-5.43
 
 	# 5.11.1. Installation of Expect
 
 	# Begin commands
-	patch -Np1 -i ../expect-5.42.1-spawn-1.patch
+	patch -Np1 -i ../expect-5.43.0-spawn-1.patch
+	patch -Np1 -i ../expect-5.43.0-tcl_8.5.5_fix-1.patch
 
-	./configure --prefix=/tools --with-tcl=/tools/lib --with-x=no
+	cp -v configure{,.orig}
+	sed 's:/usr/local/bin:/bin:' configure.orig > configure
+	
+	./configure --prefix=/tools --with-tcl=/tools/lib \
+  	--with-tclinclude=/tools/include --with-x=no
 
 	make
-
+	
 	# Begin test suites
 	if [ "$TEST_SUITES" == "yes" ]
 	then
@@ -37,8 +42,8 @@ function Expect ()
 	# End commands
 
 	cd ..
-	rm -rf expect-5.42
-	rm -rf tcl8.4.7
+	rm -rf expect-5.43
+	rm -rf tcl8.5.5
 }
 
 Expect
