@@ -41,11 +41,11 @@ function Chapter05 ()
 	# 5.10. tcl8.5.5
 	Settingenvironment "$LFS_INSTALL"/chapter05/tcl.sh								#OK
 
-	# 5.11. Expect-5.42.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/expect.sh
+	# 5.11. Expect-5.43
+	Settingenvironment "$LFS_INSTALL"/chapter05/expect.sh							#OK
 
 	# 5.12. DejaGNU-1.4.4
-	Settingenvironment "$LFS_INSTALL"/chapter05/dejagnu.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/dejagnu.sh							#OK
 
 	# 5.13. GCC-3.4.1 - Pass 2
 	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass2.sh
