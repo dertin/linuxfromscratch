@@ -18,6 +18,8 @@ function Gcc_pass1 ()
 	mv mpfr-2.3.2 mpfr
 	tar -jxf ../gmp-4.2.4.tar.bz2
 	mv gmp-4.2.4 gmp
+	tar xfj gcc-4.3.2.tar.bz2
+	cd gcc-3.4.2
 
 	# 5.5.1. Installation of GCC
 
