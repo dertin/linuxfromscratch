@@ -72,37 +72,25 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh						#OK
 	
 	# 5.15. Gawk-3.1.6
-	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh								#OK
 
-#	# 5.16. Coreutils-5.2.1
-#	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh
+	# 5.22. Gettext-0.17
+	Settingenvironment "$LFS_INSTALL"/chapter05/gettext.sh							#OK
+	
+	# 5.23. Grep-2.5.3 
+	Settingenvironment "$LFS_INSTALL"/chapter05/grep.sh								#OK
 
-#	# 5.17. Bzip2-1.0.2
-#	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh
-
-	# 5.18. Gzip-1.3.5
+	# 5.24. Gzip-1.3.12
 	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh
 
-#	# 5.19. Diffutils-2.8.1
-#	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh
 
-#	# 5.20. Findutils-4.1.20
-#	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh
+
 
 	# 5.21. Make-3.80
 	Settingenvironment "$LFS_INSTALL"/chapter05/make.sh
 
-	# 5.22. Grep-2.5.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/grep.sh
-
 	# 5.23. Sed-4.1.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/sed.sh
-
-	# 5.24. Gettext-0.14.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/gettext.sh
-
-##	# 5.25. Ncurses-5.4
-##	Settingenvironment "$LFS_INSTALL"/chapter05/ncurses.sh
 
 	# 5.26. Patch-2.5.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/patch.sh
@@ -112,9 +100,6 @@ function Chapter05 ()
 
 	# 5.28. Texinfo-4.7
 	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh
-
-#	# 5.29. Bash-3.0
-#	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh
 
 	# 5.30. M4-1.4.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh
