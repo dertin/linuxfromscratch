@@ -81,8 +81,10 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/grep.sh								#OK
 
 	# 5.24. Gzip-1.3.12
-	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh
-
+	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh								#OK
+	
+	# 5.30. M4-1.4.2
+	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh
 
 
 
@@ -100,9 +102,6 @@ function Chapter05 ()
 
 	# 5.28. Texinfo-4.7
 	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh
-
-	# 5.30. M4-1.4.2
-	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh
 	
 	# 5.31. Bison-1.875a
 	Settingenvironment "$LFS_INSTALL"/chapter05/bison.sh
