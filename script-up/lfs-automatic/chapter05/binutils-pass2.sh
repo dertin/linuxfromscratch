@@ -12,19 +12,23 @@
 
 function Binutils_pass2 ()
 {
-	# 5.14. Binutils-2.15.91.0.2 - Pass 2
+	# 5.14. Binutils-2.18 - Pass 2
+	
 	cd "$LFS"/sources
-	tar xfj binutils-2.15.91.0.2.tar.bz2
-	cd binutils-2.15.91.0.2
+	rm binutils-2.18                        #TODO: Se deberia borrar ?
+	tar xfj binutils-2.18.tar.bz2
+	cd binutils-2.18
 
 	# 5.14.1. Re-installation of Binutils
 
 	# Begin commands
+	patch -Np1 -i ../binutils-2.18-configure-1.patch
+	
 	mkdir ../binutils-build
 	cd ../binutils-build
 
-	../binutils-2.15.91.0.2/configure --prefix=/tools \
-		--enable-shared --with-lib-path=/tools/lib
+	../binutils-2.18/configure --prefix=/tools \
+    	--disable-nls --with-lib-path=/tools/lib
 
 	make
 
@@ -39,6 +43,7 @@ function Binutils_pass2 ()
 
 	make -C ld clean
 	make -C ld LIB_PATH=/usr/lib:/lib
+	cp -v ld/ld-new /tools/bin
 	# End commands
 
 	# Warning
