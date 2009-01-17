@@ -12,16 +12,17 @@
 
 function Grep ()
 {
-	# 5.22. Grep-2.5.1
+	# 5.23. Grep-2.5.3
 	cd "$LFS"/sources
-	tar xfj grep-2.5.1.tar.bz2
-	cd grep-2.5.1
+	tar xfj grep-2.5.3.tar.bz2
+	cd grep-2.5.3
 
 	# 5.22.1. Installation of Grep
 
 	# Begin commands
 	./configure --prefix=/tools \
-		--disable-perl-regexp --with-included-regex
+    	--disable-perl-regexp \
+    	--without-included-regex
 
 	make
 
@@ -36,7 +37,7 @@ function Grep ()
 	# End commands
 
 	cd ..
-	rm -rf grep-2.5.1
+	rm -rf grep-2.5.3
 }
 
 Grep
