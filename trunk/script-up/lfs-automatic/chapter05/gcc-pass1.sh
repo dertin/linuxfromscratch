@@ -41,7 +41,7 @@ function Gcc_pass1 ()
 	# End commands
 
 	cd ..
-	rm -rf gcc-3.4.2 gcc-build
+	rm -rf gcc-3.4.2 gcc-build mpfr gmp
 }
 
 Gcc_pass1
