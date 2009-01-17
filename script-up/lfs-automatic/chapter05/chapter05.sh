@@ -26,57 +26,52 @@ function Chapter05 ()
 	# 5.5. GCC-4.3.2 - Pass 1
 	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass1.sh						#OK
 
-	# X.X. Linux-Libc-Headers-2.6.8.1
-	#Settingenvironment "$LFS_INSTALL"/chapter05/linux-libc-headers.sh				#NOT
-
 	# 5.6. Linux-2.6.27.4 API Headers
 	Settingenvironment "$LFS_INSTALL"/chapter05/kernel-headers.sh					#OK
 
-	# 5.8. Glibc-2.8-20080929
+	# 5.7. Glibc-2.8-20080929
 	Settingenvironment "$LFS_INSTALL"/chapter05/glibc.sh							#OK
 
-	# 5.9. Adjusting the Toolchain
+	# 5.8. Adjusting the Toolchain
 	Settingenvironment "$LFS_INSTALL"/chapter05/adjusting.sh						#OK
 
-	# 5.10. tcl8.5.5
+	# 5.9. Tcl-8.5.5
 	Settingenvironment "$LFS_INSTALL"/chapter05/tcl.sh								#OK
 
-	# 5.11. Expect-5.43
+	# 5.10. Expect-5.43.0
 	Settingenvironment "$LFS_INSTALL"/chapter05/expect.sh							#OK
 
-	# 5.12. DejaGNU-1.4.4
+	# 5.11. DejaGNU-1.4.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/dejagnu.sh							#OK
 
-	# 5.13. GCC-3.4.1 - Pass 2
+	# 5.12. GCC-4.3.2 - Pass 2
 	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass2.sh						#OK
 
-	# 5.14. Binutils-2.15.91.0.2 - Pass 2
+	# 5.13. Binutils-2.18 - Pass 2
 	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass2.sh					#OK
 
-	# 5.15. Ncurses-5.4
+	# 5.14. Ncurses-5.6
 	Settingenvironment "$LFS_INSTALL"/chapter05/ncurses.sh							#OK
 	
-	# 5.16. Bash-3.2
+	# 5.15. Bash-3.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh								#OK
 
-	# 5.17. Bzip2-1.0.2
+	# 5.16. Bzip2-1.0.5
 	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh							#OK
 
-	# 5.18. Coreutils-6.12
+	# 5.17. Coreutils-6.12
 	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh						#OK
 
-	# 5.19. Diffutils-2.8.1
+	# 5.18. Diffutils-2.8.1
 	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh						#OK
 	
-	# 5.20. E2fsprogs-1.41.3
+	# 5.19. E2fsprogs-1.41.3
 	Settingenvironment "$LFS_INSTALL"/chapter05/e2fsprogs.sh						#OK
 	
-	# 5.21. Findutils-4.4.0
+	# 5.20. Findutils-4.4.0
 	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh						#OK
 	
-	
-	
-	# 5.15. Gawk-3.1.4
+	# 5.15. Gawk-3.1.6
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
 
 #	# 5.16. Coreutils-5.2.1
