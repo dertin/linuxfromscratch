@@ -84,12 +84,12 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh								#OK
 	
 	# 5.30. M4-1.4.2
-	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh								#OK
+
+	# 5.26. Make-3.81
+	Settingenvironment "$LFS_INSTALL"/chapter05/make.sh								#OK
 
 
-
-	# 5.21. Make-3.80
-	Settingenvironment "$LFS_INSTALL"/chapter05/make.sh
 
 	# 5.23. Sed-4.1.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/sed.sh
