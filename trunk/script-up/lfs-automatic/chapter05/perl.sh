@@ -11,27 +11,28 @@
 
 function Perl ()
 {
-	# 5.34. Perl-5.8.5
+	# 5.34. Perl-5.10.0
 	cd "$LFS"/sources
-	tar xfj perl-5.8.5.tar.bz2
-	cd perl-5.8.5
+	tar xzf perl-5.10.0.tar.gz
+	cd perl-5.10.0
 
 	# 5.34.1. Installation of Perl
 
 	# Begin commands
-	patch -Np1 -i ../perl-5.8.5-libc-1.patch
+	patch -Np1 -i ../perl-5.10.0-consolidated-1.patch
 
-	./configure.gnu --prefix=/tools -Dstatic_ext='IO Fcntl POSIX'
+	sh Configure -des -Dprefix=/tools \
+                  -Dstatic_ext='Data/Dumper Fcntl IO POSIX'
 
-	make perl utilities
-
-	cp perl pod/pod2man /tools/bin
-	mkdir -p /tools/lib/perl5/5.8.5
-	cp -R lib/* /tools/lib/perl5/5.8.5
+	make perl utilities ext/Errno/pm_to_blib
+	
+	cp -v perl pod/pod2man /tools/bin
+	mkdir -pv /tools/lib/perl5/5.10.0
+	cp -Rv lib/* /tools/lib/perl5/5.10.0
 	# End commands
 
 	cd ..
-	rm -rf perl-5.8.5
+	rm -rf perl-5.10.0
 }
 
 Perl
