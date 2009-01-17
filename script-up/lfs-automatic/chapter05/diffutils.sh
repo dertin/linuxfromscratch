@@ -14,7 +14,7 @@ function Diffutils ()
 {
 	# 5.19. Diffutils-2.8.1
 	cd "$LFS"/sources
-	tar xfj diffutils-2.8.1.tar.bz2
+	tar xzf diffutils-2.8.1.tar.gz
 	cd diffutils-2.8.1
 
 	# 5.19.1. Installation of Diffutils
