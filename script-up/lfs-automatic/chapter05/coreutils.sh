@@ -12,16 +12,18 @@
 
 function Coreutils ()
 {
-	# 5.16. Coreutils-5.2.1
+	# 5.16. Coreutils-6.12
 	cd "$LFS"/sources
-	tar xfj coreutils-5.2.1.tar.bz2
-	cd coreutils-5.2.1
+	tar xzf coreutils-6.12.tar.gz
+	cd coreutils-6.12
 
 	# 5.16.1. Installation of Coreutils
 
 	# Begin commands
-	DEFAULT_POSIX2_VERSION=199209 ./configure --prefix=/tools
-
+	patch -Np1 -i ../coreutils-6.12-old_build_kernel-1.patch
+	
+	./configure --prefix=/tools --enable-install-program=hostname
+	
 	make
 
 	# Begin test suites
@@ -35,7 +37,7 @@ function Coreutils ()
 	# End commands
 
 	cd ..
-	rm -rf coreutils-5.2.1
+	rm -rf coreutils-6.12
 }
 
 Coreutils
