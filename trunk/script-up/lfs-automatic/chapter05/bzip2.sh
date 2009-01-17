@@ -12,10 +12,10 @@
 
 function Bzip2 ()
 {
-	# 5.17. Bzip2-1.0.2
+	# 5.17. Bzip2-1.0.5
 	cd "$LFS"/sources
-	tar xfj bzip2-1.0.2.tar.bz2
-	cd bzip2-1.0.2
+	tar xzf bzip2-1.0.5.tar.gz
+	cd bzip2-1.0.5
 
 	# 5.17.1. Installation of Bzip2
 
@@ -26,7 +26,7 @@ function Bzip2 ()
 	# End commands
 
 	cd ..
-	rm -rf bzip2-1.0.2
+	rm -rf bzip2-1.0.5
 }
 
 Bzip2
