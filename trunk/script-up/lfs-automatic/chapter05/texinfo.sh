@@ -12,10 +12,10 @@
 
 function Texinfo ()
 {
-	# 5.28. Texinfo-4.7
+	# 5.28. Texinfo-4.13
 	cd "$LFS"/sources
-	tar xfj texinfo-4.7.tar.bz2
-	cd texinfo-4.7
+	tar xzf texinfo-4.13a.tar.gz
+	cd texinfo-4.13
 
 	# 5.28.1. Installation of Texinfo
 
@@ -35,7 +35,7 @@ function Texinfo ()
 	# End commands
 
 	cd ..
-	rm -rf texinfo-4.7
+	rm -rf texinfo-4.13
 }
 
 Texinfo
