@@ -59,14 +59,17 @@ function Chapter05 ()
 	# 5.16. Bash-3.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh								#OK
 
+	# 5.17. Bzip2-1.0.2
+	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh							#OK
+
 	# 5.15. Gawk-3.1.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
 
 	# 5.16. Coreutils-5.2.1
 	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh
 
-	# 5.17. Bzip2-1.0.2
-	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh
+#	# 5.17. Bzip2-1.0.2
+#	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh
 
 	# 5.18. Gzip-1.3.5
 	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh
@@ -101,8 +104,8 @@ function Chapter05 ()
 	# 5.28. Texinfo-4.7
 	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh
 
-	# 5.29. Bash-3.0
-	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh
+#	# 5.29. Bash-3.0
+#	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh
 
 	# 5.30. M4-1.4.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh
