@@ -12,16 +12,16 @@
 
 function Ncurses ()
 {
-	# 5.25. Ncurses-5.4
+	# 5.25. Ncurses-5.6
 	cd "$LFS"/sources
-	tar xfj ncurses-5.4.tar.bz2
-	cd ncurses-5.4
+	tar xzf ncurses-5.6.tar.gz
+	cd ncurses-5.6
 
 	# 5.25.1. Installation of Ncurses
 
 	# Begin commands
 	./configure --prefix=/tools --with-shared \
-		--without-debug --without-ada --enable-overwrite
+    	--without-debug --without-ada --enable-overwrite
 
 	make
 
@@ -29,7 +29,7 @@ function Ncurses ()
 	# End commands
 
 	cd ..
-	rm -rf ncurses-5.4
+	rm -rf ncurses-5.6
 }
 
 Ncurses
