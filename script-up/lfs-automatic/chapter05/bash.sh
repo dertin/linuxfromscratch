@@ -12,15 +12,18 @@
 
 function Bash ()
 {
-	# 5.29. Bash-3.0
+	# 5.29. Bash-3.2
 	cd "$LFS"/sources
-	tar xfj bash-3.0.tar.bz2
-	cd bash-3.0
+	tar xzf bash-3.2.tar.gz
+	cd bash-3.2
 
 	# 5.29.1. Installation of Bash
 
 	# Begin commands
-	./configure --prefix=/tools --without-bash-malloc
+	patch -Np1 -i ../bash-3.2-fixes-8.patch
+	
+	./configure --prefix=/tools --without-bash-malloc \
+   	ac_cv_func_working_mktime=yes
 
 	make
 
@@ -37,7 +40,7 @@ function Bash ()
 	# End commands
 
 	cd ..
-	rm -rf bash-3.0
+	rm -rf bash-3.2
 }
 
 Bash
