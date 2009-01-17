@@ -3,7 +3,7 @@
 # LFS-Automatic - An Automated Linux From Scratch-Installer
 # Copyright (C) 2009  Team Developer Dertin GNU/Linux
 #
-# This project is based on "http://savannah.nongnu.org/projects/LFS-Automatic/"
+# 
 #
 # LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 # This is free software, and you are welcome to redistribute it
@@ -67,6 +67,9 @@ function Chapter05 ()
 
 	# 5.19. Diffutils-2.8.1
 	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh						#OK
+	
+	# 5.20. E2fsprogs-1.41.3
+	Settingenvironment "$LFS_INSTALL"/chapter05/e2fsprogs.sh
 	
 	# 5.15. Gawk-3.1.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
