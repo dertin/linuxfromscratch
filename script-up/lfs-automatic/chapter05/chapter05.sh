@@ -104,6 +104,9 @@ function Chapter05 ()
 	# 5.31. Texinfo-4.13a
 	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh							#OK
 	
+	# 5.32. Util-linux-ng-2.14.1 
+	Settingenvironment "$LFS_INSTALL"/chapter05/util-linux.sh						#OK
+	
 
 
 	# 5.31. Bison-1.875a
@@ -112,9 +115,7 @@ function Chapter05 ()
 	# 5.32. Flex-2.5.31
 	Settingenvironment "$LFS_INSTALL"/chapter05/flex.sh
 
-	# 5.33. Util-linux-2.12b
-	Settingenvironment "$LFS_INSTALL"/chapter05/util-linux.sh
-
+	
 	# 5.35. Udev-030
 	Settingenvironment "$LFS_INSTALL"/chapter05/udev.sh
 
