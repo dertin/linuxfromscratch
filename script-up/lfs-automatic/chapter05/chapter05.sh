@@ -89,20 +89,23 @@ function Chapter05 ()
 	# 5.26. Make-3.81
 	Settingenvironment "$LFS_INSTALL"/chapter05/make.sh								#OK
 
-
-
-	# 5.23. Sed-4.1.2
-	Settingenvironment "$LFS_INSTALL"/chapter05/sed.sh
-
-	# 5.26. Patch-2.5.4
-	Settingenvironment "$LFS_INSTALL"/chapter05/patch.sh
-
-	# 5.27. Tar-1.14
-	Settingenvironment "$LFS_INSTALL"/chapter05/tar.sh
-
-	# 5.28. Texinfo-4.7
-	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh
+	# 5.27. Patch-2.5.4
+	Settingenvironment "$LFS_INSTALL"/chapter05/patch.sh							#OK
 	
+	# 5.28. Perl-5.10.0
+	Settingenvironment "$LFS_INSTALL"/chapter05/perl.sh								#OK
+	
+	# 5.29. Sed-4.1.5
+	Settingenvironment "$LFS_INSTALL"/chapter05/sed.sh								#OK
+	
+	# 5.30. Tar-1.20
+	Settingenvironment "$LFS_INSTALL"/chapter05/tar.sh								#OK
+
+	# 5.31. Texinfo-4.13a
+	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh							#OK
+	
+
+
 	# 5.31. Bison-1.875a
 	Settingenvironment "$LFS_INSTALL"/chapter05/bison.sh
 
@@ -111,9 +114,6 @@ function Chapter05 ()
 
 	# 5.33. Util-linux-2.12b
 	Settingenvironment "$LFS_INSTALL"/chapter05/util-linux.sh
-
-	# 5.34. Perl-5.8.5
-	Settingenvironment "$LFS_INSTALL"/chapter05/perl.sh
 
 	# 5.35. Udev-030
 	Settingenvironment "$LFS_INSTALL"/chapter05/udev.sh
