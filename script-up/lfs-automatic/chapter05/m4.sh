@@ -12,12 +12,12 @@
 
 function M4 ()
 {
-	# 5.30. M4-1.4.2
+	# 5.25. M4-1.4.12
 	cd "$LFS"/sources
-	tar xfj m4-1.4.2.tar.bz2
-	cd m4-1.4.2
+	tar xfj m4-1.4.12.tar.bz2
+	cd m4-1.4.12
 
-	# 5.30.1. Installation of M4
+	# 5.25.1. Installation of M4
 
 	# Begin commands
 	./configure --prefix=/tools
@@ -35,7 +35,7 @@ function M4 ()
 	# End commands
 
 	cd ..
-	rm -rf m4-1.4.2
+	rm -rf m4-1.4.12
 }
 
 M4
