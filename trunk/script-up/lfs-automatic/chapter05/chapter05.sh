@@ -62,11 +62,14 @@ function Chapter05 ()
 	# 5.17. Bzip2-1.0.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh							#OK
 
+	# 5.18. Coreutils-6.12
+	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh						#OK
+
 	# 5.15. Gawk-3.1.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
 
-	# 5.16. Coreutils-5.2.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh
+#	# 5.16. Coreutils-5.2.1
+#	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh
 
 #	# 5.17. Bzip2-1.0.2
 #	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh
