@@ -53,6 +53,12 @@ function Chapter05 ()
 	# 5.14. Binutils-2.15.91.0.2 - Pass 2
 	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass2.sh					#OK
 
+	# 5.15. Ncurses-5.4
+	Settingenvironment "$LFS_INSTALL"/chapter05/ncurses.sh							#OK
+	
+	# 5.16. Bash-3.2
+	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh								#OK
+
 	# 5.15. Gawk-3.1.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
 
@@ -83,8 +89,8 @@ function Chapter05 ()
 	# 5.24. Gettext-0.14.1
 	Settingenvironment "$LFS_INSTALL"/chapter05/gettext.sh
 
-	# 5.25. Ncurses-5.4
-	Settingenvironment "$LFS_INSTALL"/chapter05/ncurses.sh
+##	# 5.25. Ncurses-5.4
+##	Settingenvironment "$LFS_INSTALL"/chapter05/ncurses.sh
 
 	# 5.26. Patch-2.5.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/patch.sh
