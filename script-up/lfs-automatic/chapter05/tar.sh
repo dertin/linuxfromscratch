@@ -12,10 +12,10 @@
 
 function Tar ()
 {
-	# 5.27. Tar-1.14 
+	# 5.30. Tar-1.20
 	cd "$LFS"/sources
-	tar xfj tar-1.14.tar.bz2
-	cd tar-1.14
+	tar xfj tar-1.20.tar.bz2
+	cd tar-1.20
 
 	# 5.27.1. Installation of Tar
 
@@ -35,7 +35,7 @@ function Tar ()
 	# End commands
 
 	cd ..
-	rm -rf tar-1.14
+	rm -rf tar-1.20
 }
 
 Tar
