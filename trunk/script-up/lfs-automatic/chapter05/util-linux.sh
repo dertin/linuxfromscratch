@@ -12,28 +12,24 @@
 
 function Util_linux ()
 {
-	# 5.33. Util-linux-2.12b
+	# 5.33. Util-linux-ng-2.14.1
 	cd "$LFS"/sources
-	tar xfj util-linux-2.12b.tar.bz2
-	cd util-linux-2.12b
+	tar xfj util-linux-ng-2.14.1.tar.bz2
+	cd util-linux-ng-2.14.1
 
 	# 5.33.1. Installation of Util-linux
 
 	# Begin commands
-	sed -i 's@/usr/include@/tools/include@g' configure
+	./configure --prefix=/tools
 
-	./configure
-
-	make -C lib
-
-	make -C mount mount umount
+	make BLKID_LIBS="-lblkid -luuid" -C mount mount umount
 	make -C text-utils more
-
-	cp mount/{,u}mount text-utils/more /tools/bin
+	
+	cp -v mount/{,u}mount text-utils/more /tools/bin
 	# End commands
 
 	cd ..
-	rm -rf util-linux-2.12b
+	rm -rf util-linux-ng-2.14.1
 }
 
 Util_linux
