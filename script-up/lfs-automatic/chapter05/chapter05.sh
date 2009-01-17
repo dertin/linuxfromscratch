@@ -69,7 +69,12 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh						#OK
 	
 	# 5.20. E2fsprogs-1.41.3
-	Settingenvironment "$LFS_INSTALL"/chapter05/e2fsprogs.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/e2fsprogs.sh						#OK
+	
+	# 5.21. Findutils-4.4.0
+	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh						#OK
+	
+	
 	
 	# 5.15. Gawk-3.1.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
@@ -86,8 +91,8 @@ function Chapter05 ()
 #	# 5.19. Diffutils-2.8.1
 #	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh
 
-	# 5.20. Findutils-4.1.20
-	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh
+#	# 5.20. Findutils-4.1.20
+#	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh
 
 	# 5.21. Make-3.80
 	Settingenvironment "$LFS_INSTALL"/chapter05/make.sh
