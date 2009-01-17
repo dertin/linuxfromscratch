@@ -12,14 +12,20 @@
 
 function Gzip ()
 {
-	# 5.18. Gzip-1.3.5
+	# 5.18. gzip-1.3.12
 	cd "$LFS"/sources
-	tar xfj gzip-1.3.5.tar.bz2
-	cd gzip-1.3.5
+	tar xfj gzip-1.3.12.tar.gz
+	cd gzip-1.3.12
 
 	# 5.18.1. Installation of Gzip
 
 	# Begin commands
+
+	for file in gzip.c lib/utimens.{c,h} ; do \
+   		cp -v $file{,.orig}
+   		sed 's/futimens/gl_&/' $file.orig > $file
+	done
+	
 	./configure --prefix=/tools
 
 	make
@@ -28,7 +34,7 @@ function Gzip ()
 	# End commands
 
 	cd ..
-	rm -rf gzip-1.3.5
+	rm -rf gzip-1.3.12
 }
 
 Gzip
