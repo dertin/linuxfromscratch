@@ -48,7 +48,7 @@ function Chapter05 ()
 	Settingenvironment "$LFS_INSTALL"/chapter05/dejagnu.sh							#OK
 
 	# 5.13. GCC-3.4.1 - Pass 2
-	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass2.sh
+	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass2.sh						#OK
 
 	# 5.14. Binutils-2.15.91.0.2 - Pass 2
 	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass2.sh
