@@ -9,7 +9,7 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
-function Expect ()
+function E2fsprogs ()
 {
 	# 5.11. E2fsprogs
 	cd "$LFS"/sources
@@ -32,4 +32,4 @@ function Expect ()
 	cd ..
 	}
 
-Expect
+E2fsprogs
