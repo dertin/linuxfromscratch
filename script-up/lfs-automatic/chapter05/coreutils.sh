@@ -34,6 +34,8 @@ function Coreutils ()
 	# End test suites
 
 	make install
+	
+	cp -v src/su /tools/bin/su-tools
 	# End commands
 
 	cd ..
