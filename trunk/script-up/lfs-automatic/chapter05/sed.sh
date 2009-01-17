@@ -12,10 +12,10 @@
 
 function Sed ()
 {
-	# 5.23. Sed-4.1.2
+	# 5.23. Sed-4.1.5
 	cd "$LFS"/sources
-	tar xfj sed-4.1.2.tar.bz2
-	cd sed-4.1.2
+	tar xzf sed-4.1.5.tar.gz
+	cd sed-4.1.5
 
 	# 5.23.1. Installation of Sed
 
@@ -35,7 +35,7 @@ function Sed ()
 	# End commands
 
 	cd ..
-	rm -rf sed-4.1.2
+	rm -rf sed-4.1.5
 }
 
 Sed
