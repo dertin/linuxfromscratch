@@ -12,10 +12,10 @@
 
 function Make ()
 {
-	# 5.21. Make-3.80
+	# 5.21. Make-3.81
 	cd "$LFS"/sources
-	tar xfj make-3.80.tar.bz2
-	cd make-3.80
+	tar xfj make-3.81.tar.bz2
+	cd make-3.81
 
 	# 5.21.1. Installation of Make
 
@@ -35,7 +35,7 @@ function Make ()
 	# End commands
 
 	cd ..
-	rm -rf make-3.80
+	rm -rf make-3.81
 }
 
 Make
