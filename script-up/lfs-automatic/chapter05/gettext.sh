@@ -12,31 +12,26 @@
 
 function Gettext ()
 {
-	# 5.24. Gettext-0.14.1
+	# 5.24. Gettext-0.17
 	cd "$LFS"/sources
-	tar xfj gettext-0.14.1.tar.bz2
-	cd gettext-0.14.1
+	tar xfj gettext-0.17.tar.gz
+	cd gettext-0.17
 
 	# 5.24.1. Installation of Gettext
 
 	# Begin commands
-	./configure --prefix=/tools --disable-libasprintf \
-		--disable-csharp
+	cd gettext-tools
+	./configure --prefix=/tools --disable-shared
 
-	make
-
-	# Begin test suites
-	if [ "$TEST_SUITES" == "yes" ]
-	then
-		make check
-	fi
-	# End test suites
-
-	make install
+	make -C gnulib-lib
+	make -C src msgfmt
+	
+	cp -v src/msgfmt /tools/bin
+	
 	# End commands
 
 	cd ..
-	rm -rf gettext-0.14.1
+	rm -rf gettext-0.17
 }
 
 Gettext
