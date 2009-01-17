@@ -65,6 +65,9 @@ function Chapter05 ()
 	# 5.18. Coreutils-6.12
 	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh						#OK
 
+	# 5.19. Diffutils-2.8.1
+	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh						#OK
+	
 	# 5.15. Gawk-3.1.4
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh
 
@@ -77,8 +80,8 @@ function Chapter05 ()
 	# 5.18. Gzip-1.3.5
 	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh
 
-	# 5.19. Diffutils-2.8.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh
+#	# 5.19. Diffutils-2.8.1
+#	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh
 
 	# 5.20. Findutils-4.1.20
 	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh
