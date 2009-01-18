@@ -90,7 +90,7 @@ function main ()
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
 		echo
-		echo "This project is based on "lfs-install"
+		echo "This project is based on (lfs-install)"
 		echo
 		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
 		echo "This is free software, and you are welcome to redistribute it"
