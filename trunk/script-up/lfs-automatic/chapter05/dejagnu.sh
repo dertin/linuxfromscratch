@@ -12,12 +12,12 @@
 
 function Dejagnu ()
 {
-	# 5.12. DejaGNU-1.4.4
+	# 5.11. DejaGNU-1.4.4
 	cd "$LFS"/sources
 	tar xzf dejagnu-1.4.4.tar.gz
 	cd dejagnu-1.4.4
 
-	# 5.12.1. Installation of DejaGNU
+	# 5.11.1. Installation of DejaGNU
 
 	# Begin commands
 	./configure --prefix=/tools

@@ -12,18 +12,15 @@
 
 function Adjusting ()
 {
-	# 5.9. Adjusting the Toolchain
+	# 5.8. Adjusting the Toolchain
 	
 	mv -v /tools/bin/{ld,ld-old}
 	mv -v /tools/$(gcc -dumpmachine)/bin/{ld,ld-old}
 	mv -v /tools/bin/{ld-new,ld}
 	ln -sv /tools/bin/ld /tools/$(gcc -dumpmachine)/bin/ld
-	
-	#si no existe ld-linux.so.2, y tiene otro nombre llevaria a un error.
-	
+		
 	gcc -dumpspecs | sed 's@/lib/ld-linux.so.2@/tools&@g' \
   	> `dirname $(gcc -print-libgcc-file-name)`/specs
-	
 	
 	GCC_FIXED=`dirname $(gcc -print-libgcc-file-name)`/include-fixed &&
 	find ${GCC_FIXED}/* -maxdepth 0 -xtype d -exec rm -rvf '{}' \; &&

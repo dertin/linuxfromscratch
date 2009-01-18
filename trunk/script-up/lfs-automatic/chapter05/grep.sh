@@ -17,7 +17,7 @@ function Grep ()
 	tar xfj grep-2.5.3.tar.bz2
 	cd grep-2.5.3
 
-	# 5.22.1. Installation of Grep
+	# 5.23.1. Installation of Grep
 
 	# Begin commands
 	./configure --prefix=/tools \

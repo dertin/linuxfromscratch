@@ -12,9 +12,9 @@
 
 function Gzip ()
 {
-	# 5.18. gzip-1.3.12
+	# 5.24. gzip-1.3.12
 	cd "$LFS"/sources
-	tar xfj gzip-1.3.12.tar.gz
+	tar xzf gzip-1.3.12.tar.gz
 	cd gzip-1.3.12
 
 	# 5.18.1. Installation of Gzip

@@ -12,12 +12,12 @@
 
 function Ncurses ()
 {
-	# 5.25. Ncurses-5.6
+	# 5.14. Ncurses-5.6
 	cd "$LFS"/sources
 	tar xzf ncurses-5.6.tar.gz
 	cd ncurses-5.6
 
-	# 5.25.1. Installation of Ncurses
+	# 5.14.1. Installation of Ncurses
 
 	# Begin commands
 	./configure --prefix=/tools --with-shared \

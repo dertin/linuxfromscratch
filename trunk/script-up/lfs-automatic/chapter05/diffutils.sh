@@ -12,12 +12,12 @@
 
 function Diffutils ()
 {
-	# 5.19. Diffutils-2.8.1
+	# 5.18. Diffutils-2.8.1
 	cd "$LFS"/sources
 	tar xzf diffutils-2.8.1.tar.gz
 	cd diffutils-2.8.1
 
-	# 5.19.1. Installation of Diffutils
+	# 5.18.1. Installation of Diffutils
 
 	# Begin commands
 	./configure --prefix=/tools

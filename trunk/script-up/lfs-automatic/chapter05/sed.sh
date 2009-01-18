@@ -12,12 +12,12 @@
 
 function Sed ()
 {
-	# 5.23. Sed-4.1.5
+	# 5.29. Sed-4.1.5
 	cd "$LFS"/sources
 	tar xzf sed-4.1.5.tar.gz
 	cd sed-4.1.5
 
-	# 5.23.1. Installation of Sed
+	# 5.29.1. Installation of Sed
 
 	# Begin commands
 	./configure --prefix=/tools

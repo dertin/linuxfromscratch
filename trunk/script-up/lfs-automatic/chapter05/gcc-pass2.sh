@@ -12,7 +12,7 @@
 
 function Gcc_pass2 ()
 {
-	# 5.13. GCC-3.4.2 - Pass 2
+	# 5.12. GCC-3.4.2 - Pass 2
 	cd "$LFS"/sources
 	tar -jxf ../mpfr-2.3.2.tar.bz2
 	mv mpfr-2.3.2 mpfr
@@ -21,7 +21,7 @@ function Gcc_pass2 ()
 	tar xfj gcc-4.3.2.tar.bz2
 	cd gcc-3.4.2
 
-	# 5.13.1. Re-installation of GCC
+	# 5.12.1. Re-installation of GCC
 
 	# Begin commands
 	#expect -c "spawn ls"
@@ -41,8 +41,6 @@ function Gcc_pass2 ()
 	if [ "$TEST_SUITES" == "yes" ]
 	then
 		make -k check
-
-		#../gcc-3.4.1/contrib/test_summary
 	fi
 	# End test suites
 

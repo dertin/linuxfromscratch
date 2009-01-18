@@ -11,12 +11,12 @@
 
 function Perl ()
 {
-	# 5.34. Perl-5.10.0
+	# 5.28. Perl-5.10.0
 	cd "$LFS"/sources
 	tar xzf perl-5.10.0.tar.gz
 	cd perl-5.10.0
 
-	# 5.34.1. Installation of Perl
+	# 5.28.1. Installation of Perl
 
 	# Begin commands
 	patch -Np1 -i ../perl-5.10.0-consolidated-1.patch

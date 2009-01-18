@@ -12,12 +12,12 @@
 
 function Bash ()
 {
-	# 5.29. Bash-3.2
+	# 5.15. Bash-3.2
 	cd "$LFS"/sources
 	tar xzf bash-3.2.tar.gz
 	cd bash-3.2
 
-	# 5.29.1. Installation of Bash
+	# 5.15.1. Installation of Bash
 
 	# Begin commands
 	patch -Np1 -i ../bash-3.2-fixes-8.patch

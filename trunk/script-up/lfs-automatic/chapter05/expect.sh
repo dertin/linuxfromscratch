@@ -12,12 +12,12 @@
 
 function Expect ()
 {
-	# 5.11. Expect-5.43.0
+	# 5.10. Expect-5.43.0
 	cd "$LFS"/sources
 	tar xzf expect-5.43.0.tar.gz
 	cd expect-5.43
 
-	# 5.11.1. Installation of Expect
+	# 5.10.1. Installation of Expect
 
 	# Begin commands
 	patch -Np1 -i ../expect-5.43.0-spawn-1.patch
