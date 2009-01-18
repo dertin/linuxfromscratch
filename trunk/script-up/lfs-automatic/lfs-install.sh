@@ -3,7 +3,7 @@
 # LFS-Automatic - An Automated Linux From Scratch-Installer
 # Copyright (C) 2009  Team Developer Dertin GNU/Linux
 #
-# 
+# This project is based on "lfs-install"
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
