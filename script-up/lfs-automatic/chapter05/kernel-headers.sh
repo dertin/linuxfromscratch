@@ -12,12 +12,12 @@
 
 function Kernel_headers ()
 {
-	# 5.7. Linux-2.6.27.4 Headers
+	# 5.6. Linux-2.6.27.4 API Headers
 	cd "$LFS"/sources
 	tar xfj linux-2.6.27.4.tar.bz2
 	cd linux-2.6.27.4
 
-	# 5.7.1. Installation of the Kernel Headers
+	# 5.6.1. Installation of the Kernel Headers
 
 	# Begin commands
 	make mrproper

@@ -12,12 +12,12 @@
 
 function Util_linux ()
 {
-	# 5.33. Util-linux-ng-2.14.1
+	# 5.32. Util-linux-ng-2.14.1
 	cd "$LFS"/sources
 	tar xfj util-linux-ng-2.14.1.tar.bz2
 	cd util-linux-ng-2.14.1
 
-	# 5.33.1. Installation of Util-linux
+	# 5.32.1. Installation of Util-linux
 
 	# Begin commands
 	./configure --prefix=/tools

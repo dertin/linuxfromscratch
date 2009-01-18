@@ -12,19 +12,19 @@
 
 function Binutils_pass2 ()
 {
-	# 5.14. Binutils-2.18 - Pass 2
+	# 5.13. Binutils-2.18 - Pass 2
 	
 	cd "$LFS"/sources
-	rm binutils-2.18                        #TODO: Se deberia borrar ?
-	tar xfj binutils-2.18.tar.bz2
+#	rm binutils-2.18                        #TODO: Se deberia borrar ?
+#	tar xfj binutils-2.18.tar.bz2
 	cd binutils-2.18
 
-	# 5.14.1. Re-installation of Binutils
+	# 5.13.1. Re-installation of Binutils
 
 	# Begin commands
 	patch -Np1 -i ../binutils-2.18-configure-1.patch
 	
-	mkdir ../binutils-build
+#	mkdir ../binutils-build					#TODO: Ya existe del Pass1.
 	cd ../binutils-build
 
 	../binutils-2.18/configure --prefix=/tools \

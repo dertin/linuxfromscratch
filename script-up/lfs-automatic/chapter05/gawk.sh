@@ -11,12 +11,12 @@
 
 function Gawk ()
 {
-	# 5.15. Gawk-3.1.6
+	# 5.21. Gawk-3.1.6
 	cd "$LFS"/sources
 	tar xfj gawk-3.1.6.tar.bz2
 	cd gawk-3.1.6
 
-	# 5.15.1. Installation of Gawk
+	# 5.21.1. Installation of Gawk
 
 	# Begin commands
 	./configure --prefix=/tools ac_cv_func_working_mktime=yes

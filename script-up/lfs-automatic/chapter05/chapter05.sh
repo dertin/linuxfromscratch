@@ -71,7 +71,7 @@ function Chapter05 ()
 	# 5.20. Findutils-4.4.0
 	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh						#OK
 	
-	# 5.15. Gawk-3.1.6
+	# 5.21. Gawk-3.1.6
 	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh								#OK
 
 	# 5.22. Gettext-0.17
@@ -83,7 +83,7 @@ function Chapter05 ()
 	# 5.24. Gzip-1.3.12
 	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh								#OK
 	
-	# 5.30. M4-1.4.2
+	# 5.25. M4-1.4.2
 	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh								#OK
 
 	# 5.26. Make-3.81

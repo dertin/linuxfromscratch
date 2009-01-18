@@ -12,12 +12,12 @@
 
 function Gettext ()
 {
-	# 5.24. Gettext-0.17
+	# 5.22. Gettext-0.17
 	cd "$LFS"/sources
-	tar xfj gettext-0.17.tar.gz
+	tar xzf gettext-0.17.tar.gz
 	cd gettext-0.17
 
-	# 5.24.1. Installation of Gettext
+	# 5.22.1. Installation of Gettext
 
 	# Begin commands
 	cd gettext-tools

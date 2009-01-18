@@ -11,7 +11,7 @@
 
 function E2fsprogs ()
 {
-	# 5.11. E2fsprogs
+	# 5.19. E2fsprogs
 	cd "$LFS"/sources
 	tar xzf e2fsprogs-1.41.3.tar.gz
 	cd e2fsprogs-1.41.3
@@ -30,6 +30,7 @@ function E2fsprogs ()
 	chmod -v u+w /tools/lib/{libblkid,libcom_err,libe2p,libext2fs,libss,libuuid}.a
 	
 	cd ..
+	rm -rf e2fsprogs-1.41.3
 	}
 
 E2fsprogs

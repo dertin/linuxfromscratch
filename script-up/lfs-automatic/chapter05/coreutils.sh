@@ -12,12 +12,12 @@
 
 function Coreutils ()
 {
-	# 5.16. Coreutils-6.12
+	# 5.17. Coreutils-6.12
 	cd "$LFS"/sources
 	tar xzf coreutils-6.12.tar.gz
 	cd coreutils-6.12
 
-	# 5.16.1. Installation of Coreutils
+	# 5.17.1. Installation of Coreutils
 
 	# Begin commands
 	patch -Np1 -i ../coreutils-6.12-old_build_kernel-1.patch

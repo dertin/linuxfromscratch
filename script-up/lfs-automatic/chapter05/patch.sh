@@ -12,12 +12,12 @@
 
 function Patch ()
 {
-	# 5.26. Patch-2.5.4
+	# 5.27. Patch-2.5.4
 	cd "$LFS"/sources
 	tar xzf patch-2.5.4.tar.gz
 	cd patch-2.5.4
 
-	# 5.26.1. Installation of Patch
+	# 5.27.1. Installation of Patch
 
 	# Begin commands
 	

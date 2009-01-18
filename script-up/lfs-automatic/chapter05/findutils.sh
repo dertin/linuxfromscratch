@@ -12,12 +12,12 @@
 
 function Findutils ()
 {
-	# 5.21. Findutils-4.4.0
+	# 5.20. Findutils-4.4.0
 	cd "$LFS"/sources
 	tar xzf findutils-4.4.0.tar.gz
 	cd findutils-4.4.0
 
-	# 5.21.1. Installation of Findutils
+	# 5.20.1. Installation of Findutils
 
 	# Begin commands
 	./configure --prefix=/tools

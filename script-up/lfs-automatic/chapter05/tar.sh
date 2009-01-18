@@ -17,7 +17,7 @@ function Tar ()
 	tar xfj tar-1.20.tar.bz2
 	cd tar-1.20
 
-	# 5.27.1. Installation of Tar
+	# 5.30.1. Installation of Tar
 
 	# Begin commands
 	./configure --prefix=/tools

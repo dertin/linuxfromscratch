@@ -12,17 +12,19 @@
 
 function Glibc ()
 {
-	# 5.8. Glibc-2.8-20080929
+	# 5.7. Glibc-2.8-20080929
 	cd "$LFS"/sources
 	tar xfj glibc-2.8-20080929.tar.bz2
 	cd glibc-2.8-20080929
 
-	# 5.8.1. Installation of Glibc
+	# 5.7.1. Installation of Glibc
 
 	# Begin commands
 	sed -i 's@/etc/ld.so.preload@/tools/etc/ld.so.preload@' elf/rtld.c
+	
 	mkdir ../glibc-build
 	cd ../glibc-build
+	
 	echo "CFLAGS += -march=i486 -mtune=native" > configparms
 
 	../glibc-2.8-20080929/configure --prefix=/tools \

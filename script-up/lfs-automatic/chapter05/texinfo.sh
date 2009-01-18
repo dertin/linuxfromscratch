@@ -12,12 +12,12 @@
 
 function Texinfo ()
 {
-	# 5.28. Texinfo-4.13
+	# 5.31. Texinfo-4.13
 	cd "$LFS"/sources
 	tar xzf texinfo-4.13a.tar.gz
 	cd texinfo-4.13
 
-	# 5.28.1. Installation of Texinfo
+	# 5.31.1. Installation of Texinfo
 
 	# Begin commands
 	./configure --prefix=/tools
