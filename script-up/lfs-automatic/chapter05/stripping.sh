@@ -18,7 +18,7 @@ function Stripping ()
 	strip --strip-debug /tools/lib/*
 	strip --strip-unneeded /tools/{,s}bin/*
 
-	rm -rf /tools/{doc,info,man}
+	rm -rf /tools/{info,man}
 	# End commands
 }
 
