@@ -110,6 +110,9 @@ function Chapter05 ()
 	# 5.33. Stripping
 	"$LFS_INSTALL"/chapter05/stripping.sh											#OK
 
+	#5.34. Changing Ownership
+	chown -R root:root $LFS/tools
+
 }
 
 Chapter05
