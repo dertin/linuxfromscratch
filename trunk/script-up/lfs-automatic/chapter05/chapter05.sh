@@ -107,20 +107,9 @@ function Chapter05 ()
 	# 5.32. Util-linux-ng-2.14.1 
 	Settingenvironment "$LFS_INSTALL"/chapter05/util-linux.sh						#OK
 	
+	# 5.33. Stripping
+	"$LFS_INSTALL"/chapter05/stripping.sh											#OK
 
-
-	# 5.31. Bison-1.875a
-	Settingenvironment "$LFS_INSTALL"/chapter05/bison.sh
-
-	# 5.32. Flex-2.5.31
-	Settingenvironment "$LFS_INSTALL"/chapter05/flex.sh
-
-	
-	# 5.35. Udev-030
-	Settingenvironment "$LFS_INSTALL"/chapter05/udev.sh
-
-	# 5.36. Stripping
-	"$LFS_INSTALL"/chapter05/stripping.sh
 }
 
 Chapter05
