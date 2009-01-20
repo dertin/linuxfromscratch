@@ -4,10 +4,12 @@
 # Copyright (C) 2009  Team Developer Dertin GNU/Linux
 #
 #
-#
 # LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
+
+# Amended by: Guillermo Céspedes Tabárez
+# 13/01/2009
 
 
 function Patch ()
