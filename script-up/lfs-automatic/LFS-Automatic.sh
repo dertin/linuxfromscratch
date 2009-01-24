@@ -32,7 +32,9 @@ function Lfs_install ()
 
 	# Chapter 4. Final Preparations
 	source "$LFS_INSTALL"/chapter04/chapter04.sh
-
+    
+    chmod 711 "$LFS_INSTALL"/chapter05/*.sh
+    
 	# Chapter 5. Constructing a Temporary System
 	source "$LFS_INSTALL"/chapter05/chapter05.sh
 
