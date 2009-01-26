@@ -35,7 +35,7 @@ function Check_existing ()
 	fi
 }
 
-function Check_user ()
+function Check_user_root ()
 {
 	if [ "$(id -u)" != "0" ]
 	then
