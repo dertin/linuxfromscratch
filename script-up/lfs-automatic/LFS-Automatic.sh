@@ -18,9 +18,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
 function Lfs_user ()
 {
-	# Adding the LFS User
+	# Adding the LFS User --user
 
 	# Begin commands
 	groupadd lfs
@@ -33,7 +35,7 @@ function Lfs_user ()
 
 	chown lfs $LFS/sources
 
-	su - lfs
+	su - lfs # -> reset Bash exit
 	# End commands
 
 }
@@ -49,14 +51,14 @@ function Lfs_config ()
 	# Config Preparations
 	"$LFS_INSTALL"/environment/main.sh
 }
+
+
 function Lfs_install ()
 {
 	# Linux From Scratch --install
 
 	# Chapter 3. Packages and Patches
 	source "$LFS_INSTALL"/chapter03/chapter03.sh
-
-
         
 	# Chapter 5. Constructing a Temporary System
 	source "$LFS_INSTALL"/chapter05/chapter05.sh
@@ -140,6 +142,34 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	Lfs_install
+	;;
+	-u|--user)
+			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo
+		echo "This project is based on (lfs-install)"
+		echo
+		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
+		echo "This is free software, and you are welcome to redistribute it"
+		echo "under certain conditions; see COPYING for details."
+		echo
+	Lfs_user
+	;;
+	*)
+	echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+			echo
+			echo -e "Usage: \t $(basename $0) [OPTION]"
+			echo
+			echo "Options:"
+			echo -e "\t -h, --help:    \t Shows help screen."
+			echo -e "\t -v, --version: \t Shows version information."
+			echo -e "\t -u, --user:    \t Add User LFS."
+			echo -e "\t -c, --config:  \t Config."
+			echo -e "\t -i, --install: \t Install."
+			echo "Report bugs to ...soon..."
+
+	exit 1
+	;;
 	esac
 }
 
