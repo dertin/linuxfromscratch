@@ -32,9 +32,7 @@ function Lfs_install ()
 
 	# Chapter 4. Final Preparations
 	source "$LFS_INSTALL"/chapter04/chapter04.sh
-    
-    chmod 711 "$LFS_INSTALL"/chapter05/*.sh
-    
+        
 	# Chapter 5. Constructing a Temporary System
 	source "$LFS_INSTALL"/chapter05/chapter05.sh
 
@@ -68,7 +66,8 @@ function main ()
 			echo "Options:"
 			echo -e "\t -h, --help:    \t Shows help screen"
 			echo -e "\t -v, --version: \t Shows version information"
-			echo
+			echo -e "\t -c, --config:  \t Config"
+			echo -e "\t -i, --install: \t Install"
 			echo "Report bugs to ...soon..."
 
 			exit 1
@@ -78,16 +77,14 @@ function main ()
 			echo "LFS-Automatic, version $LFS_INSTALL_VERSION"
 			echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
 			echo
-			echo "Homepage ...soon..."
 
 			exit 1
 			;;
 
-		*)
+	-c|--config)
 			Check_running
 			Check_existing
 			Check_user
-			Check_compile
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -98,9 +95,25 @@ function main ()
 		echo "This is free software, and you are welcome to redistribute it"
 		echo "under certain conditions; see COPYING for details."
 		echo
-	
-			Lfs_install
-			;;
+		
+		Lfs_config
+		;;
+	-i|--install)
+	  		Check_running
+			Check_existing
+			Check_user
+			Check_config
+		
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo
+		echo "This project is based on (lfs-install)"
+		echo
+		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
+		echo "This is free software, and you are welcome to redistribute it"
+		echo "under certain conditions; see COPYING for details."
+		echo
+	Lfs_install
 	esac
 }
 
