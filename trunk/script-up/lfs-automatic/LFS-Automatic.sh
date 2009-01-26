@@ -23,7 +23,7 @@ function Lfs_config ()
 	# Linux From Scratch --config
 	
 	# Preparing a New Partition
-	source "$LFS_INSTALL"/chapter02/chapter02.sh
+	source "$LFS_INSTALL"/partition/main.sh
 
 }
 function Lfs_install ()
