@@ -3,29 +3,23 @@
 # LFS-Automatic - An Automated Linux From Scratch-Installer
 # Copyright (C) 2009  Team Developer Dertin GNU/Linux
 #
-#
 # LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
 
-function Addinguser ()
+function Environment ()
 {
-	# 4.3. Adding the LFS User
+	# Config Preparations
 
-	# Begin commands
-	groupadd lfs
-	useradd -s /bin/bash -g lfs -m -k /dev/null lfs
+	# Creating the $LFS/tools Directory
+	"$LFS_INSTALL"/environment/creatingtoolsdir.sh
 
-	#passwd lfs
-	passwd -d lfs
-
-	chown lfs $LFS/tools
-
-	chown lfs $LFS/sources
-
-	#su - lfs
-	# End commands
+	# Setting Environment
+	"$LFS_INSTALL"/environment/settingenvironment.sh
+	
+	# About the Test Suites
+	#"$LFS_INSTALL"/environment/abouttestsuites.sh
 }
 
-Addinguser
+Environment
