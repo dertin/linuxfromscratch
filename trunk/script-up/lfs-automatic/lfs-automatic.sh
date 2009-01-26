@@ -32,7 +32,6 @@ function Lfs_user ()
 	passwd -d lfs
 
 	chown lfs $LFS/tools
-
 	chown lfs $LFS/sources
 
 	su - lfs # -> reset Bash exit
@@ -112,7 +111,7 @@ function main ()
 	-c|--config)
 			Check_running
 			Check_existing
-			Check_user
+			Check_user_root
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -128,9 +127,9 @@ function main ()
 		;;
 	-i|--install)
 	  		Check_running
-			Check_existing
-			Check_user
-			Check_config
+			#Check_existing
+			Check_config   #Check Perfil user LFS & other Config
+			Check_user_lfs #Check user LFS
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -144,7 +143,10 @@ function main ()
 	Lfs_install
 	;;
 	-u|--user)
-			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		Check_running
+		Check_config   #Check Perfil user LFS & other Config
+		
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
 		echo
 		echo "This project is based on (lfs-install)"
@@ -156,17 +158,18 @@ function main ()
 	Lfs_user
 	;;
 	*)
-	echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-			echo
-			echo -e "Usage: \t $(basename $0) [OPTION]"
-			echo
-			echo "Options:"
-			echo -e "\t -h, --help:    \t Shows help screen."
-			echo -e "\t -v, --version: \t Shows version information."
-			echo -e "\t -u, --user:    \t Add User LFS."
-			echo -e "\t -c, --config:  \t Config."
-			echo -e "\t -i, --install: \t Install."
-			echo "Report bugs to ...soon..."
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo
+		echo -e "Usage: \t $(basename $0) [OPTION]"
+		echo
+		echo "Options:"
+		echo -e "\t -h, --help:    \t Shows help screen."
+		echo -e "\t -v, --version: \t Shows version information."
+		echo -e
+		echo -e "\t -u, --user:    \t Add User LFS."
+		echo -e "\t -c, --config:  \t Config."
+		echo -e "\t -i, --install: \t Install."
+		echo "Report bugs to ...soon..."
 
 	exit 1
 	;;
