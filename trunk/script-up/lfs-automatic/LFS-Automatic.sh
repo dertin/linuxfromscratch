@@ -18,14 +18,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+function Lfs_config ()
+{
+	# Linux From Scratch --config
+	
+	# Preparing a New Partition
+	source "$LFS_INSTALL"/chapter02/chapter02.sh
 
-
+}
 function Lfs_install ()
 {
-	# Linux From Scratch
-
-	# Chapter 2. Preparing a New Partition
-	source "$LFS_INSTALL"/chapter02/chapter02.sh
+	# Linux From Scratch --install
 
 	# Chapter 3. Packages and Patches
 	source "$LFS_INSTALL"/chapter03/chapter03.sh
