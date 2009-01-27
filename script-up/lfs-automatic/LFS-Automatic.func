@@ -47,6 +47,15 @@ function Check_user_root ()
 
 function Check_config ()
 {
+if test -f /etc/inittab; then
+      echo El fichero inittab existe.
+else
+      echo El fichero inittab NO existe.
+fi
+}
+
+function Check_user_lfs ()
+{
 if [ "$(whoami)" != "lfs" ]
 	then
 		echo "EUSER: '"$(whoami)"' is not (user lfs)."
