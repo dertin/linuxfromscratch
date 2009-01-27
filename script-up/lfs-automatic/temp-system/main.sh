@@ -12,109 +12,106 @@
 # 13/01/2009
 
 
-function Chapter05 ()
+function TSystem ()
 {
-	# Chapter 5. Constructing a Temporary System
+	# TSystem. Constructing a Temporary System
 
-	# 4.4. Setting Up the Environment
-	source "$LFS_INSTALL"/chapter04/settingenvironment.sh
+	# Host System Requirements
+	"$LFS_INSTALL"/temp-system/hostreqs.sh
 
-	# 5.2. Host System Requirements
-	"$LFS_INSTALL"/chapter05/hostreqs.sh
+	# Binutils-2.18 - Pass 1
+	"$LFS_INSTALL"/temp-system/binutils-pass1.sh				#OK
 
-	# 5.4. Binutils-2.18 - Pass 1
-	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass1.sh					#OK
+	# GCC-4.3.2 - Pass 1
+	"$LFS_INSTALL"/temp-system/gcc-pass1.sh						#OK
 
-	# 5.5. GCC-4.3.2 - Pass 1
-	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass1.sh						#OK
+	# Linux-2.6.27.4 API Headers
+	"$LFS_INSTALL"/temp-system/kernel-headers.sh				#OK
 
-	# 5.6. Linux-2.6.27.4 API Headers
-	Settingenvironment "$LFS_INSTALL"/chapter05/kernel-headers.sh					#OK
+	# Glibc-2.8-20080929
+	"$LFS_INSTALL"/temp-system/glibc.sh							#OK
 
-	# 5.7. Glibc-2.8-20080929
-	Settingenvironment "$LFS_INSTALL"/chapter05/glibc.sh							#OK
+	# Adjusting the Toolchain
+	"$LFS_INSTALL"/temp-system/adjusting.sh						#OK
 
-	# 5.8. Adjusting the Toolchain
-	Settingenvironment "$LFS_INSTALL"/chapter05/adjusting.sh						#OK
+	# Tcl-8.5.5
+	"$LFS_INSTALL"/temp-system/tcl.sh							#OK
 
-	# 5.9. Tcl-8.5.5
-	Settingenvironment "$LFS_INSTALL"/chapter05/tcl.sh								#OK
+	# Expect-5.43.0
+	"$LFS_INSTALL"/temp-system/expect.sh						#OK
 
-	# 5.10. Expect-5.43.0
-	Settingenvironment "$LFS_INSTALL"/chapter05/expect.sh							#OK
+	# DejaGNU-1.4.4
+	"$LFS_INSTALL"/temp-system/dejagnu.sh						#OK
 
-	# 5.11. DejaGNU-1.4.4
-	Settingenvironment "$LFS_INSTALL"/chapter05/dejagnu.sh							#OK
+	# GCC-4.3.2 - Pass 2
+	"$LFS_INSTALL"/temp-system/gcc-pass2.sh						#OK
 
-	# 5.12. GCC-4.3.2 - Pass 2
-	Settingenvironment "$LFS_INSTALL"/chapter05/gcc-pass2.sh						#OK
+	# Binutils-2.18 - Pass 2
+	"$LFS_INSTALL"/temp-system/binutils-pass2.sh				#OK
 
-	# 5.13. Binutils-2.18 - Pass 2
-	Settingenvironment "$LFS_INSTALL"/chapter05/binutils-pass2.sh					#OK
-
-	# 5.14. Ncurses-5.6
-	Settingenvironment "$LFS_INSTALL"/chapter05/ncurses.sh							#OK
+	# Ncurses-5.6
+	"$LFS_INSTALL"/temp-system/ncurses.sh						#OK
 	
-	# 5.15. Bash-3.2
-	Settingenvironment "$LFS_INSTALL"/chapter05/bash.sh								#OK
+	# Bash-3.2
+	"$LFS_INSTALL"/temp-system/bash.sh							#OK
 
-	# 5.16. Bzip2-1.0.5
-	Settingenvironment "$LFS_INSTALL"/chapter05/bzip2.sh							#OK
+	# Bzip2-1.0.5
+	"$LFS_INSTALL"/temp-system/bzip2.sh							#OK
 
-	# 5.17. Coreutils-6.12
-	Settingenvironment "$LFS_INSTALL"/chapter05/coreutils.sh						#OK
+	# Coreutils-6.12
+	"$LFS_INSTALL"/temp-system/coreutils.sh						#OK
 
-	# 5.18. Diffutils-2.8.1
-	Settingenvironment "$LFS_INSTALL"/chapter05/diffutils.sh						#OK
+	# Diffutils-2.8.1
+	"$LFS_INSTALL"/temp-system/diffutils.sh						#OK
 	
-	# 5.19. E2fsprogs-1.41.3
-	Settingenvironment "$LFS_INSTALL"/chapter05/e2fsprogs.sh						#OK
+	# E2fsprogs-1.41.3
+	"$LFS_INSTALL"/temp-system/e2fsprogs.sh						#OK
 	
-	# 5.20. Findutils-4.4.0
-	Settingenvironment "$LFS_INSTALL"/chapter05/findutils.sh						#OK
+	# Findutils-4.4.0
+	"$LFS_INSTALL"/temp-system/findutils.sh						#OK
 	
-	# 5.21. Gawk-3.1.6
-	Settingenvironment "$LFS_INSTALL"/chapter05/gawk.sh								#OK
+	# Gawk-3.1.6
+	"$LFS_INSTALL"/temp-system/gawk.sh							#OK
 
-	# 5.22. Gettext-0.17
-	Settingenvironment "$LFS_INSTALL"/chapter05/gettext.sh							#OK
+	# Gettext-0.17
+	"$LFS_INSTALL"/temp-system/gettext.sh						#OK
 	
-	# 5.23. Grep-2.5.3 
-	Settingenvironment "$LFS_INSTALL"/chapter05/grep.sh								#OK
+	# Grep-2.5.3 
+	"$LFS_INSTALL"/temp-system/grep.sh							#OK
 
-	# 5.24. Gzip-1.3.12
-	Settingenvironment "$LFS_INSTALL"/chapter05/gzip.sh								#OK
+	# Gzip-1.3.12
+	"$LFS_INSTALL"/temp-system/gzip.sh							#OK
 	
-	# 5.25. M4-1.4.2
-	Settingenvironment "$LFS_INSTALL"/chapter05/m4.sh								#OK
+	# M4-1.4.2
+	"$LFS_INSTALL"/temp-system/m4.sh							#OK
 
-	# 5.26. Make-3.81
-	Settingenvironment "$LFS_INSTALL"/chapter05/make.sh								#OK
+	# Make-3.81
+	"$LFS_INSTALL"/temp-system/make.sh							#OK
 
-	# 5.27. Patch-2.5.4
-	Settingenvironment "$LFS_INSTALL"/chapter05/patch.sh							#OK
+	# Patch-2.5.4
+	"$LFS_INSTALL"/temp-system/patch.sh							#OK
 	
-	# 5.28. Perl-5.10.0
-	Settingenvironment "$LFS_INSTALL"/chapter05/perl.sh								#OK
+	# Perl-5.10.0
+	"$LFS_INSTALL"/temp-system/perl.sh							#OK
 	
-	# 5.29. Sed-4.1.5
-	Settingenvironment "$LFS_INSTALL"/chapter05/sed.sh								#OK
+	# Sed-4.1.5
+	"$LFS_INSTALL"/temp-system/sed.sh							#OK
 	
-	# 5.30. Tar-1.20
-	Settingenvironment "$LFS_INSTALL"/chapter05/tar.sh								#OK
+	# Tar-1.20
+	"$LFS_INSTALL"/temp-system/tar.sh							#OK
 
-	# 5.31. Texinfo-4.13a
-	Settingenvironment "$LFS_INSTALL"/chapter05/texinfo.sh							#OK
+	# Texinfo-4.13a
+	"$LFS_INSTALL"/temp-system/texinfo.sh						#OK
 	
-	# 5.32. Util-linux-ng-2.14.1 
-	Settingenvironment "$LFS_INSTALL"/chapter05/util-linux.sh						#OK
+	# Util-linux-ng-2.14.1 
+	"$LFS_INSTALL"/temp-system/util-linux.sh					#OK
 	
-	# 5.33. Stripping
-	"$LFS_INSTALL"/chapter05/stripping.sh											#OK
+	# Stripping
+	"$LFS_INSTALL"/temp-system/stripping.sh						#OK
 
-	#5.34. Changing Ownership
+	# Changing Ownership
 	chown -R root:root $LFS/tools
 
 }
 
-Chapter05
+TSystem
