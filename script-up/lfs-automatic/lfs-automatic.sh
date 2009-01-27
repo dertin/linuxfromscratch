@@ -63,22 +63,22 @@ function Lfs_install ()
 	# Linux From Scratch --install
 
 	# Packages and Patches
-	source "$LFS_INSTALL"/chapter03/chapter03.sh
+	"$LFS_INSTALL"/chapter03/chapter03.sh
         
 	# Constructing a Temporary System
-	source "$LFS_INSTALL"/chapter05/chapter05.sh
+	"$LFS_INSTALL"/chapter05/chapter05.sh
 
 	# Installing Basic System Software
-	source "$LFS_INSTALL"/chapter06/chapter06.sh
+	"$LFS_INSTALL"/chapter06/chapter06.sh
 
 	# Setting Up System Bootscripts
-	source "$LFS_INSTALL"/chapter07/chapter07.sh
+    "$LFS_INSTALL"/chapter07/chapter07.sh
 
 	# Making the LFS System Bootable
-	source "$LFS_INSTALL"/chapter08/chapter08.sh
+	"$LFS_INSTALL"/chapter08/chapter08.sh
 
 	# The End
-	source "$LFS_INSTALL"/chapter09/chapter09.sh
+	"$LFS_INSTALL"/chapter09/chapter09.sh
 }
 
 function main ()
