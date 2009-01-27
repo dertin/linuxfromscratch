@@ -66,7 +66,7 @@ function Lfs_install ()
 	"$LFS_INSTALL"/sources/main.sh
         
 	# Constructing a Temporary System
-	"$LFS_INSTALL"/chapter05/chapter05.sh
+	"$LFS_INSTALL"/temp-system/main.sh
 
 	# Installing Basic System Software
 	"$LFS_INSTALL"/chapter06/chapter06.sh
