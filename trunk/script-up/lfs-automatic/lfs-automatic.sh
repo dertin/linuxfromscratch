@@ -63,7 +63,7 @@ function Lfs_install ()
 	# Linux From Scratch --install
 
 	# Packages and Patches
-	"$LFS_INSTALL"/chapter03/chapter03.sh
+	"$LFS_INSTALL"/sources/main.sh
         
 	# Constructing a Temporary System
 	"$LFS_INSTALL"/chapter05/chapter05.sh
