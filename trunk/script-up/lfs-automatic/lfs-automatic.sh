@@ -19,6 +19,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+if [ $# -lt 1 ]; then
+        echo "Failure. He hoped at least one parameter"
+        echo -e "\t -h, --help:    \t Shows help screen."
+        exit 1
+fi
+
 
 function Lfs_user ()
 {
@@ -92,8 +98,8 @@ function main ()
 			echo "Options:"
 			echo -e "\t -h, --help:    \t Shows help screen."
 			echo -e "\t -v, --version: \t Shows version information."
-			echo -e "\t -u, --user:    \t Add User LFS."
 			echo -e "\t -c, --config:  \t Config."
+			echo -e "\t -u, --user:    \t Add User LFS."
 			echo -e "\t -i, --install: \t Install."
 			echo "Report bugs to ...soon..."
 
@@ -128,8 +134,8 @@ function main ()
 	-i|--install)
 	  		Check_running
 			#Check_existing
-			Check_config   #Check Perfil user LFS & other Config
-			Check_user_lfs #Check user LFS
+			Check_config   	#Check Perfil user LFS & other Config
+			Check_user_lfs 	#Check user LFS
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
