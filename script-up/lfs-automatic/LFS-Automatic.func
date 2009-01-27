@@ -47,7 +47,7 @@ function Check_user_root ()
 
 function Check_config ()
 {
-if test -f /etc/inittab; then
+if test -f /home/lfs/.config_ok; then
       echo El fichero inittab existe.
 else
       echo El fichero inittab NO existe.
