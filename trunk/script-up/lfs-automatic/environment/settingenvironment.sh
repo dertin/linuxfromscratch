@@ -17,7 +17,12 @@ function Settingenvironment ()
 	cat > ~/.bash_profile << "EOF"
 	exec env -i HOME="$HOME" TERM="$TERM" PS1="\u:\w\$ " /bin/bash
 	EOF
-
+	
+	if [ $? = 1 ]; then
+	echo "Error Config .bash_profile"
+	exit 1
+	fi
+	
 	cat > ~/.bashrc << "EOF"
 	set +h
 	umask 022
@@ -27,6 +32,10 @@ function Settingenvironment ()
 	export LFS LC_ALL PATH
 	EOF
 	
+	if [ $? = 1 ]; then
+	echo "Error Config .bashrc"
+	exit 1
+	fi
 	cat > /home/lfs/.config_lfs << "EOF"
 	Not Remove - Config PASS
 	EOF
