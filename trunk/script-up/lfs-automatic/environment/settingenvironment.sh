@@ -26,7 +26,11 @@ function Settingenvironment ()
 	PATH="/tools/bin:/bin:/usr/bin"
 	export LFS LC_ALL PATH
 	EOF
-
+	
+	cat > /home/lfs/.config_lfs << "EOF"
+	Not Remove - Config PASS
+	EOF
+	
 	source ~/.bash_profile
 	# End commands
 }
