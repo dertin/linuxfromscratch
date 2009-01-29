@@ -44,6 +44,14 @@ function Lfs_adduser ()
 	"$LFS_INSTALL"/user/useradd.sh
 }
 
+function Lfs_setuser ()
+{
+	# Linux From Scratch --setuser
+	
+	# Set User
+	"$LFS_INSTALL"/environment/main.sh
+}
+
 function Lfs_install ()
 {
 	# Linux From Scratch --install
@@ -117,6 +125,37 @@ function main ()
 		
 		Lfs_config
 		;;
+	-u|--adduser) #OK
+		Check_running
+		
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo
+		echo "This project is based on (lfs-install)"
+		echo
+		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
+		echo "This is free software, and you are welcome to redistribute it"
+		echo "under certain conditions; see COPYING for details."
+		echo
+	
+	Lfs_adduser
+	;;
+	-s|--setuser) #OK
+		Check_running
+		Check_user_lfs 	#Check User Login LFS
+		
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo
+		echo "This project is based on (lfs-install)"
+		echo
+		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
+		echo "This is free software, and you are welcome to redistribute it"
+		echo "under certain conditions; see COPYING for details."
+		echo
+	
+	Lfs_setuser
+	;;
 	-i|--install)
 	  		Check_running
 			Check_config   	#Check Perfil User LFS & other Config
@@ -132,22 +171,6 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	Lfs_install
-	;;
-	-u|--adduser)
-		Check_running
-		
-		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
-		echo
-		echo "This project is based on (lfs-install)"
-		echo
-		echo "LFS-Automatic comes with ABSOLUTELY NO WARRANTY; for details see COPYING."
-		echo "This is free software, and you are welcome to redistribute it"
-		echo "under certain conditions; see COPYING for details."
-		echo
-	
-	Lfs_adduser
-	
 	;;
 	*)
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
