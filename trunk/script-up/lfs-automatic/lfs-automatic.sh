@@ -118,6 +118,7 @@ function main ()
 			Check_running
 			Check_existing
 			Check_user_root
+			Check_user_lfs 	#Check user LFS
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -135,7 +136,7 @@ function main ()
 	  		Check_running
 			#Check_existing
 			Check_config   	#Check Perfil user LFS & other Config
-			Check_user_lfs 	#Check user LFS
+			Check_user_lfs_on 	#Check user LFS ON
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"

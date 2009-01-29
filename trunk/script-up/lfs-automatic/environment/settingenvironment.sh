@@ -36,6 +36,7 @@ function Settingenvironment ()
 	echo "Error Config .bashrc"
 	exit 1
 	fi
+	
 	cat > /home/lfs/.config_lfs << "EOF"
 	Not Remove - Config PASS
 	EOF
