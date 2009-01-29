@@ -94,7 +94,7 @@ if [ $ER = "yes" ]; then
 fi
 }
 
-function Check_user_lfs_on ()
+function Check_user_lfs ()
 {
 if [ "$(whoami)" != "lfs" ]
 	then
@@ -103,8 +103,3 @@ if [ "$(whoami)" != "lfs" ]
 		exit 1
 	fi
 }
-
-function Check_user_lfs ()
-{
-
-{
