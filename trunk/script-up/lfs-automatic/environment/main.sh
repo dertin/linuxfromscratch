@@ -20,9 +20,6 @@ function Environment ()
 	
 	# Setting Environment
 	"$LFS_INSTALL"/environment/settingenvironment.sh
-	
-	# About the Test Suites
-	#"$LFS_INSTALL"/environment/abouttestsuites.sh
 }
 
 Environment

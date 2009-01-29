@@ -41,6 +41,6 @@ function Settingenvironment ()
 	Not Remove - Config PASS
 	EOF
 	
-	source /home/lfs/.bash_profile
+	#source /home/lfs/.bash_profile
 	# End commands
 }
