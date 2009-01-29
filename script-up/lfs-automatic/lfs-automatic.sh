@@ -139,13 +139,7 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	
-	su - lfs
-	if [ $? = 1 ]; then
-	echo "ERROR: User Login"
-	exit 1
-	fi
-	echo "User Login [OK]"
-	# FIXME Login User LFS, PWD = /home/lfs, ls .. . Copy Script HERE ?
+	#null
 	
 	;;
 	*)
