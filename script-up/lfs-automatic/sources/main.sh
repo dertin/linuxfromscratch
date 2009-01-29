@@ -10,18 +10,18 @@
 
 
 
-function Chapter03 ()
+function Sources ()
 {
-	# Chapter 3. Packages and Patches
+	# Packages and Patches
 
 	# 3.1. Introduction
-	source "$LFS_INSTALL"/chapter03/introduction.sh
+	"$LFS_INSTALL"/sources/introduction.sh
 
 	# 3.2. All Packages
-	"$LFS_INSTALL"/chapter03/packages.sh
+	"$LFS_INSTALL"/sources/packages.sh
 	
 	# 3.3. Needed Patches
-	"$LFS_INSTALL"/chapter03/patches.sh
+	"$LFS_INSTALL"/sources/patches.sh
 }
 
-Chapter03
+Sources
