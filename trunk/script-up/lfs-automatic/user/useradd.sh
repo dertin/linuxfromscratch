@@ -19,6 +19,7 @@
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
 	
+	# User Login
 	su - lfs
 	if [ $? = 1 ]; then
 	echo "ERROR: User Login"
