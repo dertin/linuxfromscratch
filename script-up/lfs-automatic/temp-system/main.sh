@@ -11,7 +11,7 @@
 # Amended by: Guillermo Céspedes Tabárez
 # 13/01/2009
 
-
+#RUN USER LFS
 function TSystem ()
 {
 	# TSystem. Constructing a Temporary System

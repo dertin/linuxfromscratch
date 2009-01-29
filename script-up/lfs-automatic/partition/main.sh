@@ -10,6 +10,7 @@
 # Amended by: Guillermo Céspedes Tabárez
 # 13/01/2009
 
+# RUN ROOT
 function Partition ()
 {
 	# Preparing a New Partition
