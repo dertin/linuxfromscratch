@@ -12,9 +12,6 @@ function Environment ()
 {
 	# Config Preparations
 
-	# Creating the $LFS/tools Directory
-	"$LFS_INSTALL"/environment/creatingtoolsdir.sh
-	
 	# Setting Environment
 	"$LFS_INSTALL"/environment/settingenvironment.sh
 }
