@@ -112,8 +112,8 @@ function main ()
 		;;
 	-i|--install)
 	  		Check_running
-			Check_config   	#Check Perfil user LFS & other Config
-			Check_user_lfs 	#Check user LFS ON
+			Check_config   	#Check Perfil User LFS & other Config
+			Check_user_lfs 	#Check User Login LFS
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -145,6 +145,8 @@ function main ()
 	exit 1
 	fi
 	echo "User Login [OK]"
+	# FIXME Login User LFS, PWD = /home/lfs, ls .. . Copy Script HERE ?
+	
 	;;
 	*)
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
