@@ -33,7 +33,7 @@ function Lfs_config ()
 	"$LFS_INSTALL"/partition/main.sh
 	
 	# Config Preparations
-	"$LFS_INSTALL"/environment/main.sh
+	"$LFS_INSTALL"/sources/main.sh
 }
 
 
