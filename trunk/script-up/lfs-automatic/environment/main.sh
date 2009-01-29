@@ -7,7 +7,7 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
-
+#RUN USER LFS
 function Environment ()
 {
 	# Config Preparations
