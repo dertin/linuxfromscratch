@@ -14,7 +14,10 @@ function Environment ()
 
 	# Creating the $LFS/tools Directory
 	"$LFS_INSTALL"/environment/creatingtoolsdir.sh
-
+	
+	# User Add
+	"$LFS_INSTALL"/environment/useradd.sh
+	
 	# Setting Environment
 	"$LFS_INSTALL"/environment/settingenvironment.sh
 	

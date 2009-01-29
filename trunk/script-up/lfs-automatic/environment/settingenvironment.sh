@@ -14,7 +14,7 @@ function Settingenvironment ()
 	# Setting Up the Environment
 
 	# Begin commands
-	cat > ~/.bash_profile << "EOF"
+	cat > /home/lfs/.bash_profile << "EOF"
 	exec env -i HOME="$HOME" TERM="$TERM" PS1="\u:\w\$ " /bin/bash
 	EOF
 	
@@ -23,7 +23,7 @@ function Settingenvironment ()
 	exit 1
 	fi
 	
-	cat > ~/.bashrc << "EOF"
+	cat > /home/lfs/.bashrc << "EOF"
 	set +h
 	umask 022
 	LFS="/mnt/lfs"
@@ -41,6 +41,6 @@ function Settingenvironment ()
 	Not Remove - Config PASS
 	EOF
 	
-	source ~/.bash_profile
+	source /home/lfs/.bash_profile
 	# End commands
 }
