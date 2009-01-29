@@ -35,16 +35,6 @@ function Check_existing ()
 	fi
 }
 
-function Check_user_root ()
-{
-	if [ "$(id -u)" != "0" ]
-	then
-		echo "EUSER: '"$(whoami)"' is not root."
-
-		exit 1
-	fi
-}
-
 function Check_config ()
 {
 if test -e /home/lfs/.config_lfs; then
@@ -92,6 +82,16 @@ fi
 if [ $ER = "yes" ]; then
      exit 1
 fi
+}
+
+function Check_user_root ()
+{
+	if [ "$(id -u)" != "0" ]
+	then
+		echo "EUSER: '"$(whoami)"' is not root."
+
+		exit 1
+	fi
 }
 
 function Check_user_lfs ()
