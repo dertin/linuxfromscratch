@@ -78,7 +78,7 @@ function main ()
 			echo -e "\t -h, --help:    \t Shows help screen."
 			echo -e "\t -v, --version: \t Shows version information."
 			echo -e "\t -c, --config:  \t Config."
-			echo -e "\t -u, --user:    \t Add User LFS."
+			echo -e "\t -u, --user:    \t Login User LFS."
 			echo -e "\t -i, --install: \t Install."
 			echo "Report bugs to ...soon..."
 
@@ -157,9 +157,10 @@ function main ()
 		echo -e "\t -h, --help:    \t Shows help screen."
 		echo -e "\t -v, --version: \t Shows version information."
 		echo -e
-		echo -e "\t -u, --user:    \t Add User LFS."
 		echo -e "\t -c, --config:  \t Config."
+		echo -e "\t -u, --user:    \t Login User LFS."
 		echo -e "\t -i, --install: \t Install."
+		
 		echo "Report bugs to ...soon..."
 
 	exit 1
