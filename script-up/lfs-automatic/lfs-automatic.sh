@@ -25,27 +25,6 @@ if [ $# -lt 1 ]; then
         exit 1
 fi
 
-
-function Lfs_user ()
-{
-	# Adding the LFS User --user
-
-	# Begin commands
-	groupadd lfs
-	useradd -s /bin/bash -g lfs -m -k /dev/null lfs
-
-	#passwd lfs
-	passwd -d lfs
-
-	chown lfs $LFS/tools
-	chown lfs $LFS/sources
-
-	su - lfs # -> reset Bash exit
-	# End commands
-
-}
-
-
 function Lfs_config ()
 {
 	# Linux From Scratch --config
@@ -118,7 +97,6 @@ function main ()
 			Check_running
 			Check_existing
 			Check_user_root
-			Check_user_lfs 	#Check user LFS
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -134,9 +112,8 @@ function main ()
 		;;
 	-i|--install)
 	  		Check_running
-			#Check_existing
 			Check_config   	#Check Perfil user LFS & other Config
-			Check_user_lfs_on 	#Check user LFS ON
+			Check_user_lfs 	#Check user LFS ON
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -151,7 +128,6 @@ function main ()
 	;;
 	-u|--user)
 		Check_running
-		Check_config   #Check Perfil user LFS & other Config
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -162,7 +138,13 @@ function main ()
 		echo "This is free software, and you are welcome to redistribute it"
 		echo "under certain conditions; see COPYING for details."
 		echo
-	Lfs_user
+	
+	su - lfs
+	if [ $? = 1 ]; then
+	echo "ERROR: User Login"
+	exit 1
+	fi
+	echo "User Login [OK]"
 	;;
 	*)
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
