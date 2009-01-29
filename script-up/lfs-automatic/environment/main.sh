@@ -13,7 +13,7 @@ function Environment ()
 	# Config Preparations
 
 	# Setting Environment
-	"$LFS_INSTALL"/environment/settingenvironment.sh
+	"$LFS_INSTALL"/environment/settinguser.sh
 }
 
 Environment
