@@ -36,6 +36,13 @@ function Lfs_config ()
 	"$LFS_INSTALL"/sources/main.sh
 }
 
+function Lfs_adduser ()
+{
+	# Linux From Scratch --adduser
+	
+	# Add User & Login
+	"$LFS_INSTALL"/user/useradd.sh
+}
 
 function Lfs_install ()
 {
@@ -93,7 +100,7 @@ function main ()
 			exit 1
 			;;
 
-	-c|--config)
+	-c|--config) #OK
 			Check_running
 			Check_existing
 			Check_user_root
@@ -126,7 +133,7 @@ function main ()
 		echo
 	Lfs_install
 	;;
-	-u|--user)
+	-u|--adduser)
 		Check_running
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
@@ -139,7 +146,7 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	
-	#null
+	Lfs_adduser
 	
 	;;
 	*)
