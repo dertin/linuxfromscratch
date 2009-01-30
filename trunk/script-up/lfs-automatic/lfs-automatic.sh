@@ -19,7 +19,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-chmod -R 777 *
+
 
 if [ $# -lt 1 ]; then
         echo "Failure. He hoped at least one parameter"
@@ -33,9 +33,6 @@ function Lfs_config ()
 	
 	# Preparing a New Partition
 	"$LFS_INSTALL"/partition/main.sh
-	
-	# Download source code
-	"$LFS_INSTALL"/sources/main.sh
 }
 
 function Lfs_adduser ()
@@ -57,7 +54,10 @@ function Lfs_setuser ()
 function Lfs_install ()
 {
 	# Linux From Scratch --install
-        
+    
+    # Download source code
+	"$LFS_INSTALL"/sources/main.sh
+	    
 	# Constructing a Temporary System
 	"$LFS_INSTALL"/temp-system/main.sh
 
@@ -81,6 +81,11 @@ function main ()
 
 	source "$LFS_INSTALL"/config/lfs-automatic.conf
 	source "$LFS_INSTALL"/function/check-function.func
+
+	if [ "$(id -u)" = "0" ]
+	then
+	chmod -R 777 *
+	fi
 
 	case "$1" in
 		-h|--help)
@@ -109,7 +114,7 @@ function main ()
 			;;
 
 	-m|--make) #OK
-			Check_running
+			#Check_running
 			Check_existing
 			Check_user_root
 
@@ -126,7 +131,7 @@ function main ()
 		Lfs_config
 		;;
 	-u|--adduser) #OK
-		Check_running
+		#Check_running
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -141,7 +146,7 @@ function main ()
 	Lfs_adduser
 	;;
 	-s|--setuser) #OK
-		Check_running
+		#Check_running
 		Check_user_lfs 	#Check User Login LFS
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
@@ -157,7 +162,7 @@ function main ()
 	Lfs_setuser
 	;;
 	-i|--install)
-	  		Check_running
+	  		#Check_running
 			Check_config   	#Check Perfil User LFS & other Config
 			Check_user_lfs 	#Check User Login LFS
 		
