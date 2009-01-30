@@ -80,8 +80,8 @@ function main ()
 	LFS_INSTALL="$(pwd)"
 	export LFS_INSTALL
 
-	source "$LFS_INSTALL"/config/LFS-Automatic.conf
-	source "$LFS_INSTALL"/LFS-Automatic.func
+	source "$LFS_INSTALL"/config/lfs-automatic.conf
+	source "$LFS_INSTALL"/function/check-function.func
 
 	case "$1" in
 		-h|--help)
