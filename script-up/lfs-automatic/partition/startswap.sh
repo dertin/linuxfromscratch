@@ -20,17 +20,21 @@ read -p "Start a swap partition ? [yes|no]" OPT
 
 case "$OPT" in
 		Y|y|Yes|yes)
-			read -p "Enter partition swap [/dev/hda2]" SWAP
+		read -p "Enter partition swap [/dev/hda2]" SWAP
+		
+			if [ -z "$SWAP" ]
+			then
+			SWAP="/dev/hda2"
+			fi
+		
 			mkswap $SWAP
 			/sbin/swapon $SWAP
-			;;
-			
+		;;	
 		N|n|No|no)
-			;;
-			
+		;;	
 		*)
-			Swap
-			;;
+		Swap
+		;;
 	esac
 }
 Swap
