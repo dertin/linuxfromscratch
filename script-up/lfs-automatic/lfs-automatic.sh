@@ -32,7 +32,7 @@ function Lfs_config ()
 	# Preparing a New Partition
 	"$LFS_INSTALL"/partition/main.sh
 	
-	# Config Preparations
+	# Download source code
 	"$LFS_INSTALL"/sources/main.sh
 }
 
@@ -63,16 +63,16 @@ function Lfs_install ()
 	"$LFS_INSTALL"/temp-system/main.sh
 
 	# Installing Basic System Software
-	"$LFS_INSTALL"/chapter06/chapter06.sh
+	#"$LFS_INSTALL"/chapter06/chapter06.sh
 
 	# Setting Up System Bootscripts
-    "$LFS_INSTALL"/chapter07/chapter07.sh
+    #"$LFS_INSTALL"/chapter07/chapter07.sh
 
 	# Making the LFS System Bootable
-	"$LFS_INSTALL"/chapter08/chapter08.sh
+	#"$LFS_INSTALL"/chapter08/chapter08.sh
 
 	# The End
-	"$LFS_INSTALL"/chapter09/chapter09.sh
+	#"$LFS_INSTALL"/chapter09/chapter09.sh
 }
 
 function main ()
