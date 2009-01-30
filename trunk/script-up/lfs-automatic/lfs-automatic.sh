@@ -89,10 +89,10 @@ function main ()
 			echo "Options:"
 			echo -e "\t -h, --help:    \t Shows help screen."
 			echo -e "\t -v, --version: \t Shows version information."
-			echo -e "\t -c, --make:    \t Make."
+			echo -e "\t -c, --make:    \t Make. Preparing, Partition & Sources"
 			echo -e "\t -u, --adduser: \t Login User LFS."
-			echo -e "\t -s, --setuser: \t User config."
-			echo -e "\t -i, --install: \t Install."
+			echo -e "\t -s, --setuser: \t User Config."
+			echo -e "\t -i, --install: \t Install System-LFS."
 			echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
 			exit 1
@@ -171,19 +171,18 @@ function main ()
 	Lfs_install
 	;;
 	*)
-		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-		echo
-		echo -e "Usage: \t $(basename $0) [OPTION]"
-		echo
-		echo "Options:"
-		echo -e "\t -h, --help:    \t Shows help screen."
-		echo -e "\t -v, --version: \t Shows version information."
-		echo -e
-		echo -e "\t -c, --config:  \t Config."
-		echo -e "\t -u, --user:    \t Login User LFS."
-		echo -e "\t -i, --install: \t Install."
-		
-		echo "Report bugs to ...soon..."
+			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+			echo
+			echo -e "Usage: \t $(basename $0) [OPTION]"
+			echo
+			echo "Options:"
+			echo -e "\t -h, --help:    \t Shows help screen."
+			echo -e "\t -v, --version: \t Shows version information."
+			echo -e "\t -c, --make:    \t Make. Preparing, Partition & Sources"
+			echo -e "\t -u, --adduser: \t Login User LFS."
+			echo -e "\t -s, --setuser: \t User Config."
+			echo -e "\t -i, --install: \t Install System-LFS."
+			echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
 	exit 1
 	;;
