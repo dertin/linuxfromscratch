@@ -27,7 +27,7 @@ fi
 
 function Lfs_config ()
 {
-	# Linux From Scratch --config
+	# Linux From Scratch --make
 	
 	# Preparing a New Partition
 	"$LFS_INSTALL"/partition/main.sh
@@ -89,10 +89,11 @@ function main ()
 			echo "Options:"
 			echo -e "\t -h, --help:    \t Shows help screen."
 			echo -e "\t -v, --version: \t Shows version information."
-			echo -e "\t -c, --config:  \t Config."
-			echo -e "\t -u, --user:    \t Login User LFS."
+			echo -e "\t -c, --make:    \t Make."
+			echo -e "\t -u, --adduser: \t Login User LFS."
+			echo -e "\t -s, --setuser: \t User config."
 			echo -e "\t -i, --install: \t Install."
-			echo "Report bugs to ...soon..."
+			echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
 			exit 1
 			;;
@@ -105,7 +106,7 @@ function main ()
 			exit 1
 			;;
 
-	-c|--config) #OK
+	-m|--make) #OK
 			Check_running
 			Check_existing
 			Check_user_root
