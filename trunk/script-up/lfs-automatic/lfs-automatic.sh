@@ -33,7 +33,7 @@ function Lfs_config ()
 	"$LFS_INSTALL"/partition/main.sh
 	
 	# Download source code
-	#"$LFS_INSTALL"/sources/main.sh
+	"$LFS_INSTALL"/sources/main.sh
 }
 
 function Lfs_adduser ()
@@ -55,9 +55,6 @@ function Lfs_setuser ()
 function Lfs_install ()
 {
 	# Linux From Scratch --install
-
-	# Packages and Patches
-	"$LFS_INSTALL"/sources/main.sh
         
 	# Constructing a Temporary System
 	"$LFS_INSTALL"/temp-system/main.sh
