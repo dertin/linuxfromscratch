@@ -15,7 +15,11 @@
 
 	#passwd lfs
 	passwd -d lfs
-
+	
+	cp "$LFS_INSTALL"/../lfs-automatic.tar.gz /home/lfs
+	tar zxf /home/lfs/lfs-automatic.tar.gz
+	chown lfs /home/lfs/lfs-automatic
+	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
 	
@@ -26,4 +30,3 @@
 	exit 1
 	fi
 	echo "User Login [OK]"
-	# FIXME Login User LFS, PWD = /home/lfs, ls .. . Copy Script HERE ?
