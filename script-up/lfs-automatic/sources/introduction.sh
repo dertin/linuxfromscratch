@@ -37,9 +37,9 @@ function Introduction ()
 	
 	
 	# Begin commands
-	mkdir $LFS/sources
+	#mkdir $LFS/sources
 	
-	chmod a+wt $LFS/sources
+	#chmod a+wt $LFS/sources
 	# End commands
 }
 
