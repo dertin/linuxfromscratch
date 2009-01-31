@@ -11,13 +11,17 @@
 
 function Creatingtoolsdir ()
 {
-	# 4.2. Creating the $LFS/tools Directory
+	# Creating the $LFS/tools Directory
 
-	# Begin commands
 	mkdir $LFS/tools
 
 	ln -s $LFS/tools /
-	# End commands
+	
+	# Creating the $LFS/sources Directory
+	mkdir $LFS/sources
+	
+	chmod a+wt $LFS/sources
+	
 }
 
 Creatingtoolsdir
