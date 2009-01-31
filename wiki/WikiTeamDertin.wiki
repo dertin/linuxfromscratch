@@ -1,2 +1,0 @@
-#labels wiki,spanish,url
-Wiki: http://www.assembla.com/wiki/show/dertin
