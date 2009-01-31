@@ -28,7 +28,7 @@ function Partition ()
 	"$LFS_INSTALL"/partition/mounting.sh
 	
 	# Creating the $LFS/tools Directory
-	"$LFS_INSTALL"/partition/creatingtoolsdir.sh
+	"$LFS_INSTALL"/partition/creatingdirs.sh
 }
 
 Partition
