@@ -44,3 +44,5 @@ function Settingenvironment ()
 	#source /home/lfs/.bash_profile
 	# End commands
 }
+
+Settingenvironment
