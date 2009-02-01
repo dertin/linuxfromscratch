@@ -18,7 +18,7 @@
 	
 	cp "$LFS_INSTALL"/../lfs-automatic.tar.gz /home/lfs
 	
-	#FIXME
+	#FIXME log error: [ chown: cannot access `/home/lfs/lfs-automatic': No such file or directory ]
 	tar zxf /home/lfs/lfs-automatic.tar.gz
 	chown lfs /home/lfs/lfs-automatic
 	#FIXME
