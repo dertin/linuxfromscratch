@@ -17,8 +17,11 @@
 	passwd -d lfs
 	
 	cp "$LFS_INSTALL"/../lfs-automatic.tar.gz /home/lfs
+	
+	#FIXME
 	tar zxf /home/lfs/lfs-automatic.tar.gz
 	chown lfs /home/lfs/lfs-automatic
+	#FIXME
 	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
