@@ -8,6 +8,7 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
+	#RUN ROOT
 	
 	# User Add
 	groupadd lfs
@@ -17,15 +18,17 @@
 	passwd -d lfs
 	
 	cp "$LFS_INSTALL"/../lfs-automatic.tar.gz /home/lfs
+	#FIX 1.0 (not test)
+	cd /home/lfs
 	
 	#FIXME log error: [ chown: cannot access `/home/lfs/lfs-automatic': No such file or directory ]
-	tar zxf /home/lfs/lfs-automatic.tar.gz
-	chown lfs /home/lfs/lfs-automatic
+	tar zxf lfs-automatic.tar.gz
+	chown lfs lfs-automatic
 	#FIXME
 	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
-	
+	cd -
 	# User Login
 	su - lfs
 	if [ $? = 1 ]; then
