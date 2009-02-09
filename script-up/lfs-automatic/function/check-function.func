@@ -7,22 +7,6 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
-
-function Check_running ()
-{
-	if [ -e /var/lock/lfs-install.lock ]
-	then
-		echo "ERUNNING: '"$(basename $0)"' is already running."
-
-		exit 1
-	fi
-
-	trap "test -e /var/lock/lfs-install.lock && \
-		rm -f /var/lock/lfs-install.lock; exit 0" 0 2 15
-	
-	touch /var/lock/lfs-install.lock
-}
-
 function Check_existing ()
 {
 	if [ -e "$LFS" ]
