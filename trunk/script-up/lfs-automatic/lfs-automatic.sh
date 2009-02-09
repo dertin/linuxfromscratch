@@ -114,7 +114,6 @@ function main ()
 			;;
 
 	-m|--make) #OK
-			#Check_running
 			Check_existing
 			Check_user_root
 
@@ -131,7 +130,7 @@ function main ()
 		Lfs_config
 		;;
 	-u|--adduser) #OK
-		#Check_running
+			Check_user_root
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -146,7 +145,6 @@ function main ()
 	Lfs_adduser
 	;;
 	-s|--setuser) #OK
-		#Check_running
 		Check_user_lfs 	#Check User Login LFS
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
@@ -162,7 +160,6 @@ function main ()
 	Lfs_setuser
 	;;
 	-i|--install)
-	  		#Check_running
 			Check_config   	#Check Perfil User LFS & other Config
 			Check_user_lfs 	#Check User Login LFS
 		
