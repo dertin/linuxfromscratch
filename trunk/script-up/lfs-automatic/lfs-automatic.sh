@@ -78,9 +78,8 @@ function main ()
 {
 	LFS_INSTALL="$(pwd)"
 	export LFS_INSTALL
-
-	source "$LFS_INSTALL"/config/lfs-automatic.conf
-	source "$LFS_INSTALL"/function/check-function.func
+	
+	source "$LFS_INSTALL"/header.sh #All Header
 
 	if [ "$(id -u)" = "0" ]
 	then
