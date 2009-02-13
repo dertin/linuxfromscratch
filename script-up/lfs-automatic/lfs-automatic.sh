@@ -62,16 +62,12 @@ function Lfs_install ()
 	"$LFS_INSTALL"/temp-system/main.sh
 
 	# Installing Basic System Software
-	#"$LFS_INSTALL"/chapter06/chapter06.sh
 
 	# Setting Up System Bootscripts
-    #"$LFS_INSTALL"/chapter07/chapter07.sh
 
 	# Making the LFS System Bootable
-	#"$LFS_INSTALL"/chapter08/chapter08.sh
 
 	# The End
-	#"$LFS_INSTALL"/chapter09/chapter09.sh
 }
 
 function main ()
