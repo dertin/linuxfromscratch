@@ -19,7 +19,7 @@ function pause()
 
 function Creatingpartition ()
 {
-	# 2.2. Creating a New Partition
+	# Creating a New Partition
 	echo
 	echo -n "Enter disk [/dev/hda]: "
 	read DISK
@@ -38,16 +38,12 @@ function Creatingpartition ()
 
 	export DISK
 
-	# Begin commands
-	
 	echo
 	echo "Create a partition of at least 4gb, and if you want to create another partition that is exchanged." 
 	echo
 	pause "Press any key to continue"
 	
 	cfdisk $DISK
-	#fdisk $DISK
-	# End commands
 }
 
 Creatingpartition

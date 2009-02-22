@@ -12,7 +12,7 @@
 
 function Introduction ()
 {
-	# 3.1. Introduction
+	# Introduction
 	
 	echo
 	echo -n "Enter server [http://lfs-matrix.com/pub/lfs/]: "
@@ -35,11 +35,6 @@ function Introduction ()
 	
 	export SERVER
 	
-	
-	# Begin commands
-	#mkdir $LFS/sources
-	
-	#chmod a+wt $LFS/sources
 	# End commands
 }
 

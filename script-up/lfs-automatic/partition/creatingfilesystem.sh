@@ -13,7 +13,7 @@
 
 function Creatingfilesystem ()
 {
-	# 2.4. Creating a File System on the Partition
+	# Creating a File System on the Partition
 	echo
 	echo -n "Enter partition [/dev/hda1]: "
 	read PARTITION
@@ -32,11 +32,7 @@ function Creatingfilesystem ()
 
 	export PARTITION
 
-	# Begin commands
-	#mke2fs $PARTITION
 	mke2fs -jv $PARTITION
-	#mkswap $PARTITION
-	# End commands
 }
 
 Creatingfilesystem
