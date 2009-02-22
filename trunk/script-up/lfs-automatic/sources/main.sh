@@ -14,13 +14,13 @@ function Sources ()
 {
 	# Packages and Patches
 
-	# 3.1. Introduction
+	# Introduction
 	"$LFS_INSTALL"/sources/introduction.sh
 
-	# 3.2. All Packages
+	# All Packages
 	"$LFS_INSTALL"/sources/packages.sh
 	
-	# 3.3. Needed Patches
+	# Needed Patches
 	"$LFS_INSTALL"/sources/patches.sh
 }
 

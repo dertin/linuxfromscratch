@@ -14,7 +14,7 @@
 
 function Swap ()
 {
-	# 2.3. Start a Swap Partition
+	# Start a Swap Partition
 
 read -p "Start a swap partition ? [yes|no]" OPT
 
@@ -37,4 +37,5 @@ case "$OPT" in
 		;;
 	esac
 }
+
 Swap
