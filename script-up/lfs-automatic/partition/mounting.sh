@@ -16,7 +16,7 @@ function Mounting ()
 	#export LFS=/mnt/lfs
 
 	mkdir -p $LFS
-	mount $PARTITION $LFS
+	mount $PARTITION $LFS #FIXME fstab
 
 }
 
