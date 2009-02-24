@@ -18,11 +18,11 @@ function Partition ()
 	# Creating a New Partition
 	"$LFS_INSTALL"/partition/creatingpartition.sh
 
-	# Start a Swap Partition
-	"$LFS_INSTALL"/partition/startswap.sh
-	
 	# Creating a File System on the Partition
 	"$LFS_INSTALL"/partition/creatingfilesystem.sh
+	
+	# Start a Swap Partition
+	"$LFS_INSTALL"/partition/startswap.sh
 
 	# Mounting the New Partition
 	"$LFS_INSTALL"/partition/mounting.sh
