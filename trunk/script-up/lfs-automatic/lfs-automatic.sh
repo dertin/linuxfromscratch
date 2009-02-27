@@ -27,6 +27,15 @@ if [ $# -lt 1 ]; then
         exit 1
 fi
 
+
+function Reset ()
+{
+	# Linux From Scratch --reset
+	
+	# LFS RESET
+	"$LFS_INSTALL"/scripts/reset.sh
+}
+
 function Lfs_config ()
 {
 	# Linux From Scratch --make
@@ -168,6 +177,9 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	Lfs_install
+	;;
+	--reset)
+			Reset
 	;;
 	*)
 			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
