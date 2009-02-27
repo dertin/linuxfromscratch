@@ -13,10 +13,8 @@ function Mounting ()
 {
 	# Mounting the New Partition
 
-	#export LFS=/mnt/lfs
-
 	mkdir -p $LFS
-	mount $PARTITION $LFS #FIXME fstab
+	mount $PARTITION $LFS
 
 }
 
