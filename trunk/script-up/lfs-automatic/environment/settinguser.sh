@@ -13,10 +13,6 @@ function Settingenvironment ()
 {
 	# Setting Up the Environment
 	
-	#FIXME
-	#Log Error: /home/ubuntu/lfs-automatic/environment/settinguser.sh: line (??): syntax error: unexpected end of file
-	
-	#FIX 1.1 (not test)
 	# Begin commands
 	cat > ~/.bash_profile << "EOF"
 	exec env -i HOME=$HOME TERM=$TERM PS1='\u:\w\$ ' /bin/bash
