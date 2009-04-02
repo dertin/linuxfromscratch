@@ -17,19 +17,10 @@
 	#passwd lfs
 	passwd -d lfs
 	
-	cp "$LFS_INSTALL"/../lfs-automatic.tar.gz /home/lfs
-	#FIX 2.0 (not test)
-	cd /home/lfs
-	chmod 777 /home/lfs
-	chmod 777 /home/lfs/*
-	
-	#FIXME log error: [ chown: cannot access `/home/lfs/lfs-automatic': No such file or directory ]
-	tar zxf lfs-automatic.tar.gz
-	chown lfs lfs-automatic
-	#FIXME
-	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
+	chown lfs "$LFS_SETUP"
+	
 	cd -
 	# User Login
 	su - lfs
