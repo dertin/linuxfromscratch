@@ -87,3 +87,13 @@ if [ "$(whoami)" != "lfs" ]
 		exit 1
 	fi
 }
+
+function Check_folder_SETUP ()
+{
+if test -e "$LFS_SETUP"; then
+	echo "Check Folder Setup... [OK]"
+else
+	echo "Critical Error: Not Folder Setup Found"
+	exit 1
+fi
+}
