@@ -22,6 +22,25 @@ function Creatingtoolsdir ()
 	
 	chmod a+wt $LFS/sources
 	
+	# Creating the $LFS_SETUP Directory
+	if [ -d "$LFS_SETUP" && "$LFS_SETUP" != "$LFS_TEMP"]; then
+   	echo "Remove: $LFS_SETUP [YES|no]"
+   	read OPTy
+		case "$OPTy" in
+			Y|y|Yes|yes)
+      		rm -R "$LFS_SETUP"
+      		;;
+			N|n|No|no)
+			;;
+			*)
+			rm -R "$LFS_SETUP"
+			;;
+		esac
+	fi
+	
+	if [ "$LFS_SETUP" != "$LFS_TEMP" ]
+	mkdir "$LFS_SETUP"
+	fi
 }
 
 Creatingtoolsdir
