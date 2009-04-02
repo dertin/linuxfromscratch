@@ -20,7 +20,6 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 
-
 if [ $# -lt 1 ]; then
         echo "Failure. He hoped at least one parameter"
         echo -e "\t -h, --help:    \t Shows help screen."
@@ -32,16 +31,18 @@ function Reset ()
 {
 	# Linux From Scratch --reset
 	
-	# LFS RESET
-	"$LFS_INSTALL"/scripts/reset.sh
+	# LFS Reset
+	"$LFS_TEMP"/scripts/reset.sh
 }
 
 function Lfs_config ()
 {
-	# Linux From Scratch --make
+	# Linux From Scratch --config
 	
 	# Preparing a New Partition
-	"$LFS_INSTALL"/partition/main.sh
+	"$LFS_TEMP"/partition/main.sh
+	# Create the directory and copy the files to make the basic installation.
+	source "$LFS_TEMP"/app-setup/install.sh
 }
 
 function Lfs_adduser ()
@@ -49,7 +50,7 @@ function Lfs_adduser ()
 	# Linux From Scratch --adduser
 	
 	# Add User & Login
-	"$LFS_INSTALL"/user/useradd.sh
+	"$LFS_SETUP"/user/useradd.sh
 }
 
 function Lfs_setuser ()
@@ -57,7 +58,7 @@ function Lfs_setuser ()
 	# Linux From Scratch --setuser
 	
 	# Set User
-	"$LFS_INSTALL"/environment/main.sh
+	"$LFS_SETUP"/environment/main.sh
 }
 
 function Lfs_install ()
@@ -65,61 +66,58 @@ function Lfs_install ()
 	# Linux From Scratch --install
     
     # Download source code
-	"$LFS_INSTALL"/sources/main.sh
-	    
+	"$LFS_SETUP"/sources/main.sh
+	
 	# Constructing a Temporary System
-	"$LFS_INSTALL"/temp-system/main.sh
-
+	"$LFS_SETUP"/temp-system/main.sh
+	
 	# Installing Basic System Software
-
+	
 	# Setting Up System Bootscripts
-
+	
 	# Making the LFS System Bootable
-
+	
 	# The End
 }
 
 function main ()
 {
-	LFS_INSTALL="$(pwd)"
-	export LFS_INSTALL
+	LFS_TEMP="$(pwd)"
+	export LFS_TEMP
 	
-	source "$LFS_INSTALL"/header.sh #All Header
-
-	if [ "$(id -u)" = "0" ]
-	then
-	chmod -R 777 *
-	fi
-
+	source "$LFS_TEMP"/header.sh #All Header
+	
 	case "$1" in
-		-h|--help)
-			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-			echo
-			echo -e "Usage: \t $(basename $0) [OPTION]"
-			echo
-			echo "Options:"
-			echo -e "\t -h, --help:    \t Shows help screen."
-			echo -e "\t -v, --version: \t Shows version information."
-			echo -e "\t -c, --make:    \t Make. Preparing, Partition & Sources"
-			echo -e "\t -u, --adduser: \t Login User LFS."
-			echo -e "\t -s, --setuser: \t User Config."
-			echo -e "\t -i, --install: \t Install System-LFS."
-			echo "Report bugs to https://launchpad.net/dertin/+bugs"
+	
+	-h|--help)
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo
+		echo -e "Usage: \t $(basename $0) [OPTION]"
+		echo
+		echo "Options:"
+		echo -e "\t -h, --help:    \t Shows help screen."
+		echo -e "\t -v, --version: \t Shows version information."
+		echo -e "\t -c, --config:  \t Make. Preparing, Partition & Sources"
+		echo -e "\t -u, --adduser: \t Login User LFS."
+		echo -e "\t -s, --setuser: \t User Config."
+		echo -e "\t -i, --install: \t Install System-LFS."
+		echo -e "\t     --reset:   \t Uninstall LFS-Automatic."
+		echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
-			exit 1
-			;;
+		exit 1
+		;;
 
-		-v|--version)
-			echo "LFS-Automatic, version $LFS_INSTALL_VERSION"
-			echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
-			echo
+	-v|--version)
+		echo "LFS-Automatic, version $LFS_INSTALL_VERSION"
+		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo
 
-			exit 1
-			;;
+		exit 1
+		;;
 
-	-m|--make) #OK
-			Check_existing
-			Check_user_root
+	-c|--config) #OK
+			Check_existing		#Check if already installed.
+			Check_user_root		#Check User Login LFS.
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -134,7 +132,8 @@ function main ()
 		Lfs_config
 		;;
 	-u|--adduser) #OK
-			Check_user_root
+			Check_user_root		#Check User Login ROOT.
+			Check_folder_SETUP 	#Check Folder "$LFS_SETUP".
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -146,10 +145,11 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	
-	Lfs_adduser
+		Lfs_adduser
 	;;
 	-s|--setuser) #OK
-		Check_user_lfs 	#Check User Login LFS
+			Check_user_lfs 		#Check User Login LFS.
+			Check_folder_SETUP	#Check Folder "$LFS_SETUP".
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -161,11 +161,12 @@ function main ()
 		echo "under certain conditions; see COPYING for details."
 		echo
 	
-	Lfs_setuser
+		Lfs_setuser
 	;;
 	-i|--install)
-			Check_config   	#Check Perfil User LFS & other Config
-			Check_user_lfs 	#Check User Login LFS
+			Check_config   		#Check Perfil User LFS && other Config.
+			Check_user_lfs 		#Check User Login LFS.
+			Check_folder_SETUP 	#Check Folder "$LFS_SETUP". 
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
@@ -176,26 +177,28 @@ function main ()
 		echo "This is free software, and you are welcome to redistribute it"
 		echo "under certain conditions; see COPYING for details."
 		echo
-	Lfs_install
+		
+		Lfs_install
 	;;
 	--reset)
 			Reset
 	;;
 	*)
-			echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-			echo
-			echo -e "Usage: \t $(basename $0) [OPTION]"
-			echo
-			echo "Options:"
-			echo -e "\t -h, --help:    \t Shows help screen."
-			echo -e "\t -v, --version: \t Shows version information."
-			echo -e "\t -c, --make:    \t Make. Preparing, Partition & Sources"
-			echo -e "\t -u, --adduser: \t Login User LFS."
-			echo -e "\t -s, --setuser: \t User Config."
-			echo -e "\t -i, --install: \t Install System-LFS."
-			echo "Report bugs to https://launchpad.net/dertin/+bugs"
+		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
+		echo
+		echo -e "Usage: \t $(basename $0) [OPTION]"
+		echo
+		echo "Options:"
+		echo -e "\t -h, --help:    \t Shows help screen."
+		echo -e "\t -v, --version: \t Shows version information."
+		echo -e "\t -c, --config:  \t Make. Preparing, Partition & Sources"
+		echo -e "\t -u, --adduser: \t Login User LFS."
+		echo -e "\t -s, --setuser: \t User Config."
+		echo -e "\t -i, --install: \t Install System-LFS."
+		echo -e "\t      --reset:   \t Uninstall LFS-Automatic."
+		echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
-	exit 1
+		exit 1
 	;;
 	esac
 }
