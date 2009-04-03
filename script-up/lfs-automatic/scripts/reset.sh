@@ -30,6 +30,7 @@ function Reset ()
 			groupdel lfs
 			rm -rf /home/lfs
 
+			rm -rf "$LFS_SETUP"
 			rm -rf "$LFS"
 			rm -f /tools
 			;;
