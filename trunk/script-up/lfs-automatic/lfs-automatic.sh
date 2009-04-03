@@ -83,7 +83,7 @@ function Lfs_install ()
 function main ()
 {
 	LFS_TEMP="$(pwd)"
-	export LFS_TEMP
+	export LFS_TEMPandre
 	
 	source "$LFS_TEMP"/header.sh #All Header
 	
@@ -195,7 +195,7 @@ function main ()
 		echo -e "\t -u, --adduser: \t Login User LFS."
 		echo -e "\t -s, --setuser: \t User Config."
 		echo -e "\t -i, --install: \t Install System-LFS."
-		echo -e "\t      --reset:   \t Uninstall LFS-Automatic."
+		echo -e "\t     --reset:   \t Uninstall LFS-Automatic."
 		echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
 		exit 1
