@@ -16,19 +16,19 @@ function Partition ()
 	# Preparing a New Partition
 
 	# Creating a New Partition
-	"$LFS_INSTALL"/partition/creatingpartition.sh
+	"$LFS_TEMP"/partition/creatingpartition.sh
 
 	# Creating a File System on the Partition
-	source "$LFS_INSTALL"/partition/creatingfilesystem.sh
+	source "$LFS_TEMP"/partition/creatingfilesystem.sh
 	
 	# Start a Swap Partition
-	"$LFS_INSTALL"/partition/startswap.sh
+	"$LFS_TEMP"/partition/startswap.sh
 
 	# Mounting the New Partition
-	source "$LFS_INSTALL"/partition/mounting.sh
+	source "$LFS_TEMP"/partition/mounting.sh
 	
 	# Creating the $LFS/tools Directory
-	"$LFS_INSTALL"/partition/creatingdirs.sh
+	"$LFS_TEMP"/partition/creatingdirs.sh
 }
 
 Partition
