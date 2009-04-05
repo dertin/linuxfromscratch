@@ -85,6 +85,11 @@ function main ()
 	LFS_TEMP="$(pwd)"
 	export LFS_TEMP
 	
+	if [ "$(id -u)" = "0" ]
+	then
+	chmod -R +x *
+	fi
+	
 	source "$LFS_TEMP"/header.sh #All Header
 	
 	case "$1" in

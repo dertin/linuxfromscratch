@@ -18,7 +18,7 @@ function Install-app ()
 	cd "$LFS_SETUP"
 	if [ "$(id -u)" = "0" ]
 	then
-	chmod -R 777 *
+	chmod -R +x *
 	fi
 }
 Install-app
