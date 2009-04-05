@@ -15,13 +15,13 @@ function Sources ()
 	# Packages and Patches
 
 	# Introduction
-	"$LFS_INSTALL"/sources/introduction.sh
+	"$LFS_SETUP"/sources/introduction.sh
 
 	# All Packages
-	"$LFS_INSTALL"/sources/packages.sh
+	"$LFS_SETUP"/sources/packages.sh
 	
 	# Needed Patches
-	"$LFS_INSTALL"/sources/patches.sh
+	"$LFS_SETUP"/sources/patches.sh
 }
 
 Sources
