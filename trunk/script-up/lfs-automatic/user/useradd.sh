@@ -8,7 +8,7 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
-	#RUN ROOT
+	#RUN ROOT 
 	
 	# User Add
 	groupadd lfs
