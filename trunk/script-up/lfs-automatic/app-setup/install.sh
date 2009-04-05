@@ -12,13 +12,13 @@
 function Install-app ()
 {
 	#Copy the entire application to "$LFS_SETUP"
-	cp "$LFS_TEMP" "$LFS_SETUP"
+	cp -R "$LFS_TEMP" "$LFS_SETUP" #FixME
 	
 	#Give all the permissions (test mode)
 	cd "$LFS_SETUP"
 	if [ "$(id -u)" = "0" ]
 	then
-	chmod -R +x *
+	chmod -R +x * 
 	fi
 }
 Install-app
