@@ -38,7 +38,7 @@ function Creatingtoolsdir ()
 		esac
 	fi
 	
-	if [ "$LFS_SETUP" != "$LFS_TEMP" ]
+	if [ "$LFS_SETUP" != "$LFS_TEMP" ];	then
 	mkdir "$LFS_SETUP"
 	fi
 }
