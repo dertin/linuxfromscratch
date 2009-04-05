@@ -83,7 +83,7 @@ function Lfs_install ()
 function main ()
 {
 	LFS_TEMP="$(pwd)"
-	export LFS_TEMPandre
+	export LFS_TEMP
 	
 	source "$LFS_TEMP"/header.sh #All Header
 	
