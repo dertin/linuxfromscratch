@@ -8,6 +8,6 @@
 # under certain conditions; see COPYING for details.
 
 #Header:
-	source "$LFS_INSTALL"/config/lfs-automatic.conf
-	source "$LFS_INSTALL"/function/check-function.func
-	source "$LFS_INSTALL"/function/general-function.func
+	source "$LFS_TEMP"/config/lfs-automatic.conf
+	source "$LFS_TEMP"/function/check-function.func
+	source "$LFS_TEMP"/function/general-function.func
