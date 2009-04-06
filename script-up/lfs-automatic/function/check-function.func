@@ -21,51 +21,52 @@ function Check_existing ()
 
 function Check_config ()
 {
-if test -e /home/lfs/.config_lfs; then
-      echo "Config .config_lfs [OK]"
-else
-      echo "Config .config_lfs [ERROR]"
-	  ER="yes"
-fi
+	if test -e /home/lfs/.config_lfs; then
+    	  echo "Config .config_lfs [OK]"
+	else
+    	echo "Config .config_lfs [ERROR]"
+	  	ER="yes"
+	fi
 
-if test -e /home/lfs/.bash_profile; then
-      echo "Config .bash_profile [OK]"
-else
-      echo "Config .bash_profile [ERROR]"
-	  ER="yes"
-fi
+	if test -e /home/lfs/.bash_profile; then
+    	echo "Config .bash_profile [OK]"
+	else
+    	echo "Config .bash_profile [ERROR]"
+	  	ER="yes"
+	fi
 
-if test -e /home/lfs/.bashrc; then
-      echo "Config .bashrc [OK]"
-else
-      echo "Config .bashrc [ERROR]"
-	  ER="yes"
-fi
+	if test -e /home/lfs/.bashrc; then
+    	echo "Config .bashrc [OK]"
+	else
+    	echo "Config .bashrc [ERROR]"
+		ER="yes"
+	fi
 
-if [ $LFS = "/mnt/lfs" ]; then
-      echo "Config LFS [OK]"
-else
-      echo "Config LFS [ERROR]"
-	  ER="yes"
-fi
+	if [ $LFS = "/mnt/lfs" ]; then
+    	echo "Config LFS [OK]"
+	else
+    	echo "Config LFS [ERROR]"
+		ER="yes"
+	fi
 
-if [ $LC_ALL = "POSIX" ]; then
-      echo "Config LC_ALL [OK]"
-else
-      echo "Config LC_ALL [ERROR]"
-	  ER="yes"
-fi
+	if [ $LC_ALL = "POSIX" ]; then
+    	echo "Config LC_ALL [OK]"
+	else
+    	echo "Config LC_ALL [ERROR]"
+		ER="yes"
+	fi
 
-if [ $PATH = "/tools/bin:/bin:/usr/bin" ]; then
-      echo "Config PATH [OK]"
-else
-      echo "Config PATH [ERROR]"
-	  ER="yes"
-fi
+	if [ $PATH = "/tools/bin:/bin:/usr/bin" ]; then
+    	echo "Config PATH [OK]"
+	else
+    	echo "Config PATH [ERROR]"
+		ER="yes"
+	fi
 
-if [ $ER = "yes" ]; then
-     exit 1
-fi
+	if [ $ER = "yes" ]; then
+
+    	exit 1
+	fi
 }
 
 function Check_user_root ()
@@ -90,10 +91,11 @@ if [ "$(whoami)" != "lfs" ]
 
 function Check_folder_SETUP ()
 {
-if test -e "$LFS_SETUP"; then
-	echo "Check Folder Setup... [OK]"
-else
-	echo "Critical Error: Not Folder Setup Found"
-	exit 1
+	if test -e "$LFS_SETUP"; then
+		echo "Check Folder Setup... [OK]"
+	else
+		echo "Critical Error: Not Folder Setup Found"
+	
+		exit 1
 fi
 }

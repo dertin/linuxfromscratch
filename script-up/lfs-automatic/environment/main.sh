@@ -10,8 +10,6 @@
 #RUN USER LFS
 function Environment ()
 {
-	# Config Preparations
-
 	# Setting Environment
 	"$LFS_SETUP"/environment/settinguser.sh
 }

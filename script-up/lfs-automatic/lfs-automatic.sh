@@ -29,7 +29,7 @@ fi
 
 function Reset ()
 {
-	# Linux From Scratch --reset
+	# --reset
 	
 	# LFS Reset
 	"$LFS_TEMP"/scripts/reset.sh
@@ -37,7 +37,7 @@ function Reset ()
 
 function Lfs_config ()
 {
-	# Linux From Scratch --config
+	# --config
 	
 	# Preparing a New Partition
 	"$LFS_TEMP"/partition/main.sh
@@ -47,7 +47,7 @@ function Lfs_config ()
 
 function Lfs_adduser ()
 {
-	# Linux From Scratch --adduser
+	# --adduser
 	
 	# Add User & Login
 	"$LFS_SETUP"/user/useradd.sh
@@ -55,7 +55,7 @@ function Lfs_adduser ()
 
 function Lfs_setuser ()
 {
-	# Linux From Scratch --setuser
+	# --setuser
 	
 	# Set User
 	"$LFS_SETUP"/environment/main.sh
@@ -63,7 +63,7 @@ function Lfs_setuser ()
 
 function Lfs_install ()
 {
-	# Linux From Scratch --install
+	# --install
     
     # Download source code
 	"$LFS_SETUP"/sources/main.sh
