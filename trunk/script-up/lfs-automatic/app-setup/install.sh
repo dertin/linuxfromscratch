@@ -12,7 +12,7 @@
 function Install-app ()
 {
 	#Copy the entire application to "$LFS_SETUP"
-	cp -R "$LFS_TEMP" "$LFS_SETUP" #FixME
+	cp -R "$LFS_TEMP" "$LFS_SETUP"
 	
 	#Give all the permissions (test mode)
 	cd "$LFS_SETUP"

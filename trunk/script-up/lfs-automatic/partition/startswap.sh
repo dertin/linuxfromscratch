@@ -16,11 +16,11 @@ function Swap ()
 {
 	# Start a Swap Partition
 
-read -p "Start a swap partition ? [yes|no]" OPT
+read -p "Start a swap partition ? [yes|no]: " OPT
 
 case "$OPT" in
 		Y|y|Yes|yes)
-		read -p "Enter partition swap [/dev/hda2]" SWAP
+		read -p "Enter partition swap [/dev/hda2]: " SWAP
 		
 			if [ -z "$SWAP" ]
 			then
