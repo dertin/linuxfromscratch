@@ -24,7 +24,7 @@ function Creatingtoolsdir ()
 	
 	# Creating the $LFS_SETUP Directory
 	if [ -d "$LFS_SETUP" ] && [ "$LFS_SETUP" != "$LFS_TEMP" ]; then
-   	echo "Remove: $LFS_SETUP [YES|no]"
+   	echo "Remove old: $LFS_SETUP [YES|no]"
    	read OPTy
 		case "$OPTy" in
 			Y|y|Yes|yes)
