@@ -58,7 +58,7 @@ function Lfs_setuser ()
 	# --setuser
 	
 	# Set User
-	"$LFS_SETUP"/environment/main.sh
+	"$LFS_SETUP"/user/settinguser.sh
 }
 
 function Lfs_install ()
@@ -136,6 +136,7 @@ function main ()
 		
 		Lfs_config
 		;;
+	
 	-u|--adduser) #OK
 			Check_user_root		#Check User Login ROOT.
 			Check_folder_SETUP 	#Check Folder "$LFS_SETUP".
@@ -151,7 +152,8 @@ function main ()
 		echo
 	
 		Lfs_adduser
-	;;
+		;;
+	
 	-s|--setuser) #OK
 			Check_user_lfs 		#Check User Login LFS.
 			Check_folder_SETUP	#Check Folder "$LFS_SETUP".
@@ -167,7 +169,8 @@ function main ()
 		echo
 	
 		Lfs_setuser
-	;;
+		;;
+	
 	-i|--install)
 			Check_config   		#Check Perfil User LFS && other Config.
 			Check_user_lfs 		#Check User Login LFS.
@@ -184,10 +187,12 @@ function main ()
 		echo
 		
 		Lfs_install
-	;;
+		;;
+	
 	--reset)
 			Reset
-	;;
+		;;
+	
 	*)
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo
@@ -204,7 +209,8 @@ function main ()
 		echo "Report bugs to https://launchpad.net/dertin/+bugs"
 
 		exit 1
-	;;
+		;;
+	
 	esac
 }
 
