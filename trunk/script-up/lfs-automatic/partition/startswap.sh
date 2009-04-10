@@ -8,9 +8,9 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
-
-# Author: Guillermo Céspedes Tabárez
-# 13/01/2009 
+# By: Guillermo Céspedes Tabárez
+# Created: 13/01/2009
+# Last modified: 19/04/2009
 
 function Swap ()
 {
@@ -28,7 +28,7 @@ case "$OPT" in
 			fi
 		
 			mkswap $SWAP
-			/sbin/swapon $SWAP
+			/sbin/swapon $SWAP # Warning (no test)
 		;;	
 		N|n|No|no)
 		;;	
