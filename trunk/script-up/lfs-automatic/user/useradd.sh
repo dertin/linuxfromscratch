@@ -14,14 +14,13 @@
 	groupadd lfs
 	useradd -s /bin/bash -g lfs -m -k /dev/null lfs
 
-	#passwd lfs
+	# Passwd lfs - Null
 	passwd -d lfs
 	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
 	chown lfs "$LFS_SETUP"
 	
-	cd -
 	# User Login
 	su - lfs
 	if [ $? = 1 ]; then
