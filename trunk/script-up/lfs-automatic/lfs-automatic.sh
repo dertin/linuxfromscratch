@@ -50,7 +50,7 @@ function Lfs_adduser ()
 	# --adduser
 	
 	# Add User & Login
-	"$LFS_SETUP"/user/useradd.sh
+	"$LFS_SETUP"/lfs-automatic/user/useradd.sh
 }
 
 function Lfs_setuser ()
@@ -58,7 +58,7 @@ function Lfs_setuser ()
 	# --setuser
 	
 	# Set User
-	"$LFS_SETUP"/user/settinguser.sh
+	"$LFS_SETUP"/lfs-automatic/user/settinguser.sh
 }
 
 function Lfs_install ()
@@ -66,10 +66,10 @@ function Lfs_install ()
 	# --install
     
     # Download source code
-	"$LFS_SETUP"/sources/main.sh
+	"$LFS_SETUP"/lfs-automatic/sources/main.sh
 	
 	# Constructing a Temporary System
-	"$LFS_SETUP"/temp-system/main.sh
+	"$LFS_SETUP"/lfs-automatic/temp-system/main.sh
 	
 	# Installing Basic System Software
 	
@@ -120,7 +120,7 @@ function main ()
 		exit 1
 		;;
 
-	-c|--config) #OK
+	-c|--config) #OK/lfs-automatic
 			Check_existing		#Check if already installed.
 			Check_user_root		#Check User Login LFS.
 
