@@ -19,7 +19,9 @@
 	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
-	chown lfs "$LFS_SETUP"
+	chown lfs $LFS_SETUP
+	# In Test!!
+	chown lfs $LFS_SETUP/*
 	
 	# User Login
 	su - lfs
