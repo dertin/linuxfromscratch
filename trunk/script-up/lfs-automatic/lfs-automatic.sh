@@ -120,7 +120,7 @@ function main ()
 		exit 1
 		;;
 
-	-c|--config) #OK/lfs-automatic
+	-c|--config) #OK
 			Check_existing		#Check if already installed.
 			Check_user_root		#Check User Login LFS.
 
