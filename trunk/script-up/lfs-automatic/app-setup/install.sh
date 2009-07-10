@@ -18,11 +18,14 @@ function Install-app ()
 	#Copy the entire application to "$LFS_SETUP"
 	cp -R "$LFS_TEMP" "$LFS_SETUP"
 	
-	#Give all the permissions
+	#Give all the permissions  
+	
+	#FixME: rev245 (Betatester) > http://www.youtube.com/watch?v=DsFk33YPbKo
+	#Bug! In permits to $ LFS_SETUP user lfs!
 	cd "$LFS_SETUP"
 	if [ "$(id -u)" = "0" ]
 	then
-	chmod -R +x * 
+	chmod -R +x *
 	fi
 }
 
