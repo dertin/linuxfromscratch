@@ -10,7 +10,7 @@
 
 # By: Guillermo Céspedes Tabárez
 # Created: 13/01/2009
-# Last modified: 19/04/2009
+# Last modified: 18/07/2009
 
 function Swap ()
 {
@@ -28,7 +28,7 @@ case "$OPT" in
 			fi
 		
 			mkswap $SWAP
-			/sbin/swapon $SWAP # Warning (no test)
+			/sbin/swapon $SWAP
 		;;	
 		N|n|No|no)
 		;;	
