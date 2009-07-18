@@ -19,6 +19,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+# Author: Guillermo Céspedes Tabárez
+# Last modified: 18/07/2009
 
 if [ $# -lt 1 ]; then
         echo "Failure. He hoped at least one parameter"
@@ -122,7 +124,7 @@ function main ()
 
 	-c|--config) #OK
 			Check_existing		#Check if already installed.
-			Check_user_root		#Check User Login LFS.
+			Check_user_root		#Check User Login ROOT.
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
 		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
