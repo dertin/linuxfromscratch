@@ -8,7 +8,7 @@
 # This is free software, and you are welcome to redistribute it
 # under certain conditions; see COPYING for details.
 
-	#RUN ROOT 
+	#RUN ROOT
 	
 	# User Add
 	groupadd lfs
@@ -19,8 +19,10 @@
 	
 	chown lfs $LFS/tools
 	chown lfs $LFS/sources
+		
+	# FIX-Bug A01 - Create the directory and copy the files to make the basic installation.
+	source "$LFS_TEMP"/app-setup/install.sh
 	chown lfs $LFS_SETUP
-	# In Test!!
 	chown lfs $LFS_SETUP/*
 	
 	# User Login
