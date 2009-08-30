@@ -10,7 +10,7 @@
 
 # By: Guillermo Céspedes Tabárez
 # Created: 02/04/2009
-# Last modified: 19/04/2009
+# Last modified: 30/08/2009
 
 #RUN ROOT 
 function Install-app ()
@@ -20,8 +20,6 @@ function Install-app ()
 	
 	#Give all the permissions  
 	
-	#FixME: rev245 (Betatester) > http://www.youtube.com/watch?v=DsFk33YPbKo
-	#Bug! In permits to $ LFS_SETUP user lfs!
 	cd "$LFS_SETUP"
 	if [ "$(id -u)" = "0" ]
 	then
