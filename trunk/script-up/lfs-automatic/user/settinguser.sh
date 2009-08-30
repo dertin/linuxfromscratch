@@ -28,8 +28,9 @@ function Settingenvironment ()
 	umask 022
 	LFS=/mnt/lfs
 	LC_ALL=POSIX
+	LFS_TGT=$(uname -m)-lfs-dertin-gnu
 	PATH=/tools/bin:/bin:/usr/bin
-	export LFS LC_ALL PATH
+	export LFS LC_ALL LFS_TGT PATH
 	EOF
 	
 	if [ $? = 1 ]; then
@@ -38,7 +39,7 @@ function Settingenvironment ()
 	fi
 	
 	cat > ~/.config_lfs << "EOF"
-	Not Remove - Config PASS
+	Not Remove - config PASS
 	EOF
 	
 	source ~/.bash_profile
