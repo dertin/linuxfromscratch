@@ -20,7 +20,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 # Author: Guillermo Céspedes Tabárez
-# Last modified: 29/08/2009
+# Last modified: 21/09/2009
 
 if [ $# -lt 1 ]; then
         echo "Failure. He hoped at least one parameter"
@@ -44,9 +44,6 @@ function Lfs_config ()
 	# Preparing a New Partition
 	"$LFS_TEMP"/partition/main.sh
 	
-	# >> FIX-Bug A01 <<
-	# Create the directory and copy the files to make the basic installation.
-	#source "$LFS_TEMP"/app-setup/install.sh
 }
 
 function Lfs_adduser ()
@@ -54,7 +51,7 @@ function Lfs_adduser ()
 	# --adduser
 	
 	# Add User & Login
-	"$LFS_SETUP"/lfs-automatic/user/useradd.sh
+	"$LFS_TEMP"/user/useradd.sh
 }
 
 function Lfs_setuser ()
