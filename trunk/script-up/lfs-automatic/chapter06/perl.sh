@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # LFS-Automatic - An Automated Linux From Scratch-Installer
-# Copyright (C) 2009  Team Developer Dertin GNU/Linux
+# Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux
 #
 # 
 #

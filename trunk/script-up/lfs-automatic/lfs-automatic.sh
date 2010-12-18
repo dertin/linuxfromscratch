@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # LFS-Automatic - An Automated Linux From Scratch-Installer
-# Copyright (C) 2009  Team Developer Dertin GNU/Linux
+# Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux
 #
 # This project is based on "lfs-install"
 #
@@ -115,7 +115,7 @@ function main ()
 
 	-v|--version)
 		echo "LFS-Automatic, version $LFS_INSTALL_VERSION"
-		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo "Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux"
 		echo
 
 		exit 1
@@ -126,7 +126,7 @@ function main ()
 			Check_user_root		#Check User Login ROOT.
 
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo "Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux"
 		echo
 		echo "This project is based on (lfs-install)"
 		echo
@@ -143,7 +143,7 @@ function main ()
 			Check_folder_SETUP 	#Check Folder "$LFS_SETUP".
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo "Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux"
 		echo
 		echo "This project is based on (lfs-install)"
 		echo
@@ -160,7 +160,7 @@ function main ()
 			Check_folder_SETUP	#Check Folder "$LFS_SETUP".
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo "Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux"
 		echo
 		echo "This project is based on (lfs-install)"
 		echo
@@ -178,7 +178,7 @@ function main ()
 			Check_folder_SETUP 	#Check Folder "$LFS_SETUP". 
 		
 		echo "LFS-Automatic - An Automated Linux From Scratch-Installer"
-		echo "Copyright (C) 2009  Team Developer Dertin GNU/Linux"
+		echo "Copyright (C) 2009 - 2011  Team Developer Dertin GNU/Linux"
 		echo
 		echo "This project is based on (lfs-install)"
 		echo
